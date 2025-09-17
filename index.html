@@ -2,125 +2,128 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>My Writing Samples</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Writing Samples Portfolio</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <style>
     body {
       margin: 0;
       font-family: 'Segoe UI', Arial, sans-serif;
-      background: linear-gradient(135deg, #f3ec78 0%, #af4261 100%);
-      color: #212529;
+      background: #fafafd;
+      color: #232b2b;
     }
     .container {
-      max-width: 950px;
-      margin: 40px auto;
-      background: #fff6fae0;
-      border-radius: 15px;
-      box-shadow: 0 6px 32px #99445540;
-      padding: 38px 36px 28px 36px;
+      max-width: 680px;
+      margin: 56px auto;
+      background: #fff;
+      border-radius: 13px;
+      box-shadow: 0 3px 24px #d3d3d350;
+      padding: 0 0 28px 0;
     }
     h1 {
       text-align: center;
-      font-size: 2.8em;
+      font-size: 2em;
       letter-spacing: 1px;
-      font-weight: 700;
-      margin-bottom: 8px;
-      color: #883655;
-      background: linear-gradient(to right, #d53369, #daae51);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-    }
-    .sample-type {
-      margin: 32px 0 18px 0;
-      font-size: 1.5em;
-      background: linear-gradient(90deg, #d53369 50%, #daae51 100%);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
       font-weight: 600;
+      background: linear-gradient(90deg, #765d69 4%, #517fa4 60%, #aad8d3 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      margin: 0;
+      padding: 34px 0 10px 0;
     }
-    .samples {
+    .tabs {
       display: flex;
-      flex-wrap: wrap;
-      gap: 24px;
-      justify-content: space-between;
+      border-bottom: 1.5px solid #ececec;
+      margin: 0 30px;
     }
-    .card {
-      background: white;
-      box-shadow: 0 2px 14px #d5336960;
-      border-radius: 13px;
-      padding: 21px 19px 15px 19px;
-      flex: 1 1 45%;
-      min-width: 255px;
-      margin-bottom: 10px;
-      transition: transform 0.26s, box-shadow 0.26s;
-      border-left: 4px solid #daae51;
-    }
-    .card:hover {
-      transform: translateY(-5px) scale(1.03);
-      box-shadow: 0 8px 24px #d53369a0;
-      border-left: 4px solid #d53369;
-    }
-    .card-title {
-      font-size: 1.25em;
-      color: #d53369;
-      margin-bottom: 5px;
-      font-weight: bold;
-    }
-    .tagline {
+    .tablink {
+      flex: 1;
       text-align: center;
-      margin-top: -7px;
-      margin-bottom: 21px;
-      font-style: italic;
-      color: #daae51;
-      font-size: 1.13em;
+      font-size: 1.06em;
+      padding: 15px 0 13px 0;
+      background: none;
+      outline: none;
+      border: none;
+      border-bottom: 2.7px solid transparent;
+      cursor: pointer;
+      font-weight: 500;
+      color: #626262;
+      transition: border-bottom 0.23s, color 0.2s;
     }
-    @media (max-width: 700px) {
-      .container { padding: 18px 9px; }
-      .samples { flex-direction: column; gap: 9px; }
+    .tablink.active {
+      color: #517fa4;
+      border-bottom: 2.7px solid #517fa4;
+      font-weight: 600;
+      background: #f0f8ff88;
     }
+    .tab-content {
+      display: none;
+      padding: 18px 44px 13px 44px;
+      animation: fadeIn 0.44s;
+    }
+    .tab-content.active {
+      display: block;
+    }
+    .sample-list {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+    .sample-list li {
+      padding: 13px 0 15px 0;
+      border-bottom: 1px solid #f0f0f0;
+      font-size: 1.06em;
+      color: #3b3b3b;
+    }
+    .sample-list li:last-child {
+      border: none;
+    }
+    @media (max-width: 600px) {
+      .container { margin: 16px; }
+      .tab-content { padding: 16px 9px 7px 9px; }
+      .tabs { margin: 0 7px; }
+    }
+    @keyframes fadeIn { from {opacity: 0;} to {opacity: 1;} }
   </style>
 </head>
 <body>
   <div class="container">
-    <h1>My Writing Samples</h1>
-    <div class="tagline">Showcasing User Guides, Release Notes & Style Guides</div>
-
-    <div class="sample-type">User Guides</div>
-    <div class="samples">
-      <div class="card">
-        <div class="card-title">Getting Started with Product X</div>
-        <div>Step-by-step user onboarding guide, including screenshots, best practices, and troubleshooting.</div>
-      </div>
-      <div class="card">
-        <div class="card-title">Advanced Workflow Guide</div>
-        <div>Covers automation rules, workflow optimizations, and pro tips for maximizing productivity.</div>
-      </div>
+    <h1>Writing Samples</h1>
+    <div class="tabs">
+      <button class="tablink active" onclick="showTab('guides')">User Guides</button>
+      <button class="tablink" onclick="showTab('release')">Release Notes</button>
+      <button class="tablink" onclick="showTab('style')">Style Guides</button>
     </div>
-
-    <div class="sample-type">Release Notes</div>
-    <div class="samples">
-      <div class="card">
-        <div class="card-title">Version 2.1 Highlights</div>
-        <div>Summary of new features, bug fixes, and deprecated functions with clear action points for users.</div>
-      </div>
-      <div class="card">
-        <div class="card-title">Security Updates Bulletin</div>
-        <div>Detailed enumeration of security improvements and compliance changes with guidance for IT admins.</div>
-      </div>
+    <div id="guides" class="tab-content active">
+      <ul class="sample-list">
+        <li><strong>Getting Started with Product X</strong><br>A concise onboarding flow to help users swiftly navigate first-time set-up.</li>
+        <li><strong>Advanced Features Guide</strong><br>Clear instructions with visuals for using automation, integrations, and bulk actions.</li>
+        <li><strong>How-to: Export & Share Data</strong><br>Direct, step-wise guidance for exporting and securely sharing user data.</li>
+      </ul>
     </div>
-
-    <div class="sample-type">Style Guides</div>
-    <div class="samples">
-      <div class="card">
-        <div class="card-title">Voice & Tone Standards</div>
-        <div>Prescribes brand tone, technical terminology, and consistency across documentation.</div>
-      </div>
-      <div class="card">
-        <div class="card-title">Formatting & Accessibility</div>
-        <div>Rules for layout, heading usage, color contrast, and accessible language for all readers.</div>
-      </div>
+    <div id="release" class="tab-content">
+      <ul class="sample-list">
+        <li><strong>V2.3 Release Overview</strong><br>Summaries of key features, improvements, and deprecated options.</li>
+        <li><strong>Bugfix & Patch Spotlight</strong><br>Clear bullet-points listing fixed issues and impact timelines for each fix.</li>
+        <li><strong>Mobile App Rollout Note</strong><br>Notification of new app release with download and upgrade instructions.</li>
+      </ul>
     </div>
-
+    <div id="style" class="tab-content">
+      <ul class="sample-list">
+        <li><strong>Voice & Tone Guidance</strong><br>Unified tone-of-voice and language protocols for all user-facing content.</li>
+        <li><strong>Formatting Consistency Rules</strong><br>Practical rules for titles, numbering, and information hierarchy.</li>
+        <li><strong>Accessibility Checklist</strong><br>Guidelines to ensure documents are inclusive and easy to navigate for all users.</li>
+      </ul>
+    </div>
   </div>
+  <script>
+    function showTab(tabId) {
+      const tabs = document.querySelectorAll('.tab-content');
+      const buttons = document.querySelectorAll('.tablink');
+      tabs.forEach(tab => tab.classList.remove('active'));
+      buttons.forEach(btn => btn.classList.remove('active'));
+      document.getElementById(tabId).classList.add('active');
+      event.target.classList.add('active');
+    }
+  </script>
 </body>
 </html>
