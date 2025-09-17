@@ -3,226 +3,213 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Writing Samples — User Guides · Release Notes · Style Guides</title>
-  <meta name="description" content="Minimalist light theme writing samples page with user guides, release notes and style guides." />
+  <title>Writing Samples — Tabs Layout</title>
   <style>
-    /* ---------- Light minimalist theme ---------- */
     :root{
       --bg:#fdfdfd;
       --card:#ffffff;
-      --accent:#004aad;  /* deep blue */
-      --accent-2:#007b83; /* teal */
+      --accent:#2a5d9f;
+      --accent-2:#4aa3a2;
       --muted:#555;
-      --radius:12px;
-      color-scheme: light;
+      --soft-border:#e6e6e6;
+      --radius:14px;
     }
-    *{box-sizing:border-box}
-    html,body{height:100%;margin:0;font-family: Inter, ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial; background:var(--bg); color:#222}
-    a{color:var(--accent);text-decoration:none}
-    header{display:flex;align-items:center;justify-content:space-between;padding:20px 30px;background:#f5f5f5;border-bottom:1px solid #ddd}
-    .brand{display:flex;gap:12px;align-items:center}
-    .logo{width:48px;height:48px;border-radius:8px;background:var(--accent);display:grid;place-items:center;font-weight:700;color:#fff}
-    .title{font-size:18px;letter-spacing:0.05em}
-    .subtitle{font-size:13px;color:var(--muted)}
+    body{
+      margin:0;
+      font-family:'Segoe UI',Arial,sans-serif;
+      background:var(--bg);
+      color:#222;
+      line-height:1.6;
+      overflow-x:hidden;
+    }
+    header{
+      padding:20px 30px;
+      background:linear-gradient(90deg,var(--accent),var(--accent-2));
+      color:#fff;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      position:relative;
+      z-index:10;
+      box-shadow:0 2px 6px rgba(0,0,0,0.15);
+    }
+    .logo{
+      font-size:22px;
+      font-weight:bold;
+      letter-spacing:0.5px;
+    }
+    .tabs{display:flex;gap:15px}
+    .tabs button{
+      background:rgba(255,255,255,0.2);
+      border:none;
+      font-size:15px;
+      font-weight:600;
+      color:#fff;
+      cursor:pointer;
+      padding:8px 14px;
+      border-radius:8px;
+      transition:all .3s;
+    }
+    .tabs button:hover{background:rgba(255,255,255,0.35)}
+    .tabs button.active{background:#fff;color:var(--accent)}
 
-    main{max-width:1100px;margin:20px auto;padding:20px;}
-    .grid{display:grid;grid-template-columns:1fr 300px;gap:20px}
+    .content{
+      max-width:1000px;
+      margin:40px auto;
+      padding:0 20px;
+      position:relative;
+      z-index:5;
+    }
+    .card{
+      background:var(--card);
+      border-radius:var(--radius);
+      padding:28px;
+      border:1px solid var(--soft-border);
+      box-shadow:0 4px 16px rgba(0,0,0,0.08);
+      animation:fadeIn .6s ease;
+      transition:transform .3s;
+    }
+    .card:hover{transform:translateY(-4px)}
 
-    .card{background:var(--card);border-radius:var(--radius);padding:20px;border:1px solid #e0e0e0;box-shadow: 0 2px 6px rgba(0,0,0,0.05)}
-    h2{margin:0 0 10px 0;color:var(--accent)}
-    .muted{color:var(--muted);font-size:13px}
+    h2{margin-top:0;color:var(--accent);font-size:1.7rem;border-bottom:2px solid var(--accent-2);padding-bottom:8px}
+    .muted{color:var(--muted);font-size:14px;margin-bottom:16px}
 
-    .tabs{display:flex;gap:8px;margin-bottom:14px}
-    .tab{padding:6px 10px;border-radius:6px;background:#f0f0f0;cursor:pointer;border:1px solid #ddd;font-size:14px}
-    .tab.active{background:#e6f0fa;border-color:#c5d9f2;color:var(--accent)}
+    ol.procedure-list{padding-left:22px}
+    ol.procedure-list li{margin-bottom:12px;padding-left:4px}
 
-    .sample{display:grid;grid-template-columns:100px 1fr;gap:12px;align-items:start;padding:10px;border-radius:8px;background:#fafafa;border:1px solid #eee}
-    .thumb{height:70px;border-radius:6px;overflow:hidden;display:grid;place-items:center;background:var(--accent);color:#fff;font-weight:700}
-    .meta{font-size:14px}
-    .cta{display:inline-block;margin-top:8px;padding:8px 12px;border-radius:6px;background:var(--accent);color:#fff;font-weight:600;font-size:14px}
+    ol.style-points{padding-left:22px}
+    ol.style-points li{margin-bottom:10px;padding-left:4px}
 
-    aside{position:sticky;top:20px;height:fit-content}
-    .card.small{padding:14px}
+    table{width:100%;border-collapse:collapse;margin-top:16px;font-size:15px}
+    table th, table td{border:1px solid var(--soft-border);padding:10px;text-align:left;vertical-align:top}
+    table th{background:#f0f6fb;color:#222}
+    table tr:nth-child(even){background:#fafafa}
 
-    .procedure{display:grid;grid-template-columns:1fr 280px;gap:16px}
-    .steps{padding:12px;border-radius:10px;background:#fafafa;border:1px solid #eee}
-    .step{display:flex;gap:12px;padding:10px;border-radius:8px;margin-bottom:10px;border:1px solid #ddd;background:#fff}
-    .step .num{width:36px;height:36px;border-radius:8px;background:var(--accent-2);display:grid;place-items:center;font-weight:700;color:#fff}
-    .step .desc{font-size:14px}
-    .step .screenshot{margin-top:10px;border-radius:6px;overflow:hidden;border:1px solid #ddd}
+    footer{
+      text-align:center;
+      padding:18px;
+      border-top:1px solid #eee;
+      color:var(--muted);
+      font-size:13px;
+      margin-top:50px;
+      position:relative;
+      z-index:10;
+    }
 
-    .img-modal{position:fixed;inset:0;background:rgba(0,0,0,0.6);display:none;place-items:center;padding:20px}
-    .img-modal.open{display:grid}
-    .img-modal img{max-width:95%;max-height:90%;border-radius:10px}
+    /* Floating shapes */
+    .shape{position:absolute;border-radius:50%;opacity:0.1;z-index:1;animation:float 14s infinite ease-in-out}
+    .shape.small{width:50px;height:50px;background:var(--accent-2);top:20%;left:8%}
+    .shape.medium{width:110px;height:110px;background:var(--accent);top:45%;right:12%}
+    .shape.large{width:180px;height:180px;background:#aaa;bottom:12%;left:18%}
 
-    table{width:100%;border-collapse:collapse;font-size:13px}
-    th,td{padding:8px;border-bottom:1px solid #eee;text-align:left}
-    th{color:#333;font-weight:600;background:#f5f5f5}
+    @keyframes float{
+      0%,100%{transform:translateY(0)}
+      50%{transform:translateY(-25px)}
+    }
 
-    footer{margin-top:20px;padding:16px;text-align:center;color:var(--muted);font-size:13px;border-top:1px solid #eee}
-
-    @media (max-width:900px){.grid{grid-template-columns:1fr}.procedure{grid-template-columns:1fr}}
+    @keyframes fadeIn{
+      from{opacity:0;transform:translateY(20px)}
+      to{opacity:1;transform:translateY(0)}
+    }
   </style>
 </head>
 <body>
   <header>
-    <div class="brand">
-      <div class="logo">WS</div>
-      <div>
-        <div class="title">Writing Samples</div>
-        <div class="subtitle">User guides · Release notes · Style guides</div>
-      </div>
-    </div>
-    <nav aria-label="top actions">
-      <button class="tab active" onclick="fakeShare()">Share sample</button>
-      <button class="tab" onclick="downloadHTML()">Download HTML</button>
+    <div class="logo">Writing Samples</div>
+    <nav class="tabs">
+      <button class="tab-btn active" data-tab="procedure">Procedure</button>
+      <button class="tab-btn" data-tab="releasenotes">Release Notes</button>
+      <button class="tab-btn" data-tab="styleguide">Style Guide</button>
     </nav>
   </header>
 
-  <main>
-    <div class="grid">
-      <section>
-        <div class="card">
-          <h2>User Guides — sample procedures</h2>
-          <div class="muted">Detailed step-by-step with images</div>
+  <!-- floating shapes -->
+  <div class="shape small"></div>
+  <div class="shape medium"></div>
+  <div class="shape large"></div>
 
-          <div class="tabs" role="tablist" aria-label="guide tabs">
-            <div class="tab active" role="tab">Procedure A</div>
-            <div class="tab" role="tab">Procedure B</div>
-            <div class="tab" role="tab">Settings Walkthrough</div>
-          </div>
+  <main class="content">
 
-          <div class="procedure">
-            <div class="steps" id="steps">
-              <div class="step">
-                <div class="num">1</div>
-                <div class="desc">
-                  <strong>Open the application</strong>
-                  <div class="muted">Description</div>
-                  <div style="margin-top:6px">Launch the app from the desktop or Start menu. If browser, go to <code>https://app.example.local</code>.</div>
-                </div>
-              </div>
-              <div class="step">
-                <div class="num">2</div>
-                <div class="desc">
-                  <strong>Sign in with credentials</strong>
-                  <div class="muted">User authentication</div>
-                  <ol style="margin-top:6px;padding-left:18px">
-                    <li>Enter your company email.</li>
-                    <li>Click <em>Send code</em> if MFA enabled.</li>
-                    <li>Enter the 6-digit code and click <em>Continue</em>.</li>
-                  </ol>
-                </div>
-              </div>
-              <div class="step">
-                <div class="num">3</div>
-                <div class="desc">
-                  <strong>Complete the task</strong>
-                  <div class="muted">Performing the operation</div>
-                  <p style="margin-top:6px">Navigate to <strong>Tasks → Create</strong>, fill fields, and click <strong>Submit</strong>.</p>
-                </div>
-              </div>
-            </div>
+    <section id="procedure" class="tab-content card">
+      <h2>User Guide — Sample Procedure</h2>
+      <div class="muted">Concise step-by-step instructions</div>
+      <ol class="procedure-list">
+        <li>From the Home window, click the <strong>Application</strong> icon.</li>
+        <li>Enter your credentials and select <strong>Sign In</strong>.</li>
+        <li>From the main menu, go to <strong>Tasks → Create</strong>.</li>
+        <li>Fill in the required fields and click <strong>Submit</strong>.</li>
+        <li>Verify the new task appears in your dashboard.</li>
+      </ol>
+    </section>
 
-            <aside>
-              <div class="card small">
-                <strong>Quick checklist</strong>
-                <ul style="margin-top:6px;padding-left:18px;color:var(--muted)">
-                  <li>Account ready</li>
-                  <li>Network stable</li>
-                  <li>MFA device nearby</li>
-                </ul>
-                <a class="cta" href="#" onclick="downloadSample('user-guide')">Download sample</a>
-              </div>
-            </aside>
-          </div>
-        </div>
+    <section id="releasenotes" class="tab-content card" style="display:none">
+      <h2>Release Notes — Sample</h2>
+      <div class="muted">Version history with recent updates</div>
+      <table>
+        <tr>
+          <th>Version</th>
+          <th>Date</th>
+          <th>Changes</th>
+        </tr>
+        <tr>
+          <td>2.1.0</td>
+          <td>2025-09-15</td>
+          <td>
+            <ul>
+              <li>Introduced task creation enhancements with file upload.</li>
+              <li>Added MFA support for sign-in process.</li>
+              <li>Improved dashboard refresh speed.</li>
+            </ul>
+          </td>
+        </tr>
+        <tr>
+          <td>2.0.0</td>
+          <td>2025-08-01</td>
+          <td>
+            <ul>
+              <li>Major UI redesign for clarity and accessibility.</li>
+              <li>Bug fixes for login errors on mobile devices.</li>
+            </ul>
+          </td>
+        </tr>
+      </table>
+    </section>
 
-        <div style="height:16px"></div>
-        <div class="card">
-          <h2>Release Notes — v3.4.0 (sample)</h2>
-          <div class="muted">Concise, scannable changelog</div>
-          <table style="margin-top:10px">
-            <thead><tr><th>Type</th><th>Description</th><th>Impact</th></tr></thead>
-            <tbody>
-              <tr><td>Feature</td><td>New bulk-upload tool for assets.</td><td>Improves speed</td></tr>
-              <tr><td>Bugfix</td><td>Resolved login race condition.</td><td>Reliability</td></tr>
-              <tr><td>Docs</td><td>Added troubleshooting for MFA errors.</td><td>User guidance</td></tr>
-            </tbody>
-          </table>
-        </div>
+    <section id="styleguide" class="tab-content card" style="display:none">
+      <h2>Style Guide — Based on Microsoft Style Guide</h2>
+      <div class="muted">Key points for consistent, user-focused documentation</div>
+      <ol class="style-points">
+        <li>Use <strong>active voice</strong> whenever possible.</li>
+        <li>Write in the <strong>second person</strong> (“you”) to address the reader directly.</li>
+        <li>Keep sentences concise (average 15–20 words).</li>
+        <li>Prefer <strong>short, simple words</strong> over complex ones.</li>
+        <li>Use consistent terminology — define product names and features once and reuse them.</li>
+        <li>Capitalize UI elements exactly as they appear in the interface.</li>
+        <li>Use numbered lists for step-by-step instructions.</li>
+        <li>Avoid jargon and acronyms unless they are industry standard.</li>
+        <li>Provide context before action: explain what and why, then how.</li>
+        <li>Use tables and visuals when they make content easier to scan.</li>
+        <li>Always test procedures to ensure accuracy.</li>
+      </ol>
+    </section>
 
-        <div style="height:16px"></div>
-        <div class="card">
-          <h2>Style Guide — voice & tone (snippet)</h2>
-          <div class="muted">Helpful and consistent</div>
-          <ol style="margin-top:8px;padding-left:18px">
-            <li><strong>Voice:</strong> Professional, direct.</li>
-            <li><strong>Tone:</strong> Use active voice, short sentences.</li>
-            <li><strong>Terminology:</strong> Always use product name.</li>
-            <li><strong>Formatting:</strong> Numbered steps, bold UI actions.</li>
-          </ol>
-        </div>
-      </section>
-
-      <aside>
-        <div class="card">
-          <h3>Overview</h3>
-          <div class="muted">Curated samples demonstrating structure and clarity.</div>
-        </div>
-
-        <div style="height:12px"></div>
-
-        <div class="card">
-          <h3>Contact</h3>
-          <div class="muted">Want edits or different tone?</div>
-          <div style="margin-top:8px">
-            <button class="tab" onclick="alert('Use Download HTML to save locally.')">Request edits</button>
-          </div>
-        </div>
-      </aside>
-    </div>
-
-    <footer>
-      © Writing Samples • Light theme template
-    </footer>
   </main>
 
-  <div id="imgModal" class="img-modal" role="dialog" aria-modal="true" onclick="closeImage()">
-    <img id="imgModalImg" alt="screenshot preview"/>
-  </div>
+  <footer>
+    © Writing Samples • User Guide, Release Notes, and Style Guide Example
+  </footer>
 
   <script>
-    function openImage(id){
-      const modal = document.getElementById('imgModal');
-      const img = document.getElementById('imgModalImg');
-      img.src = 'https://via.placeholder.com/800x500.png?text=Screenshot';
-      modal.classList.add('open');
-    }
-    function closeImage(){
-      const modal = document.getElementById('imgModal');
-      const img = document.getElementById('imgModalImg');
-      modal.classList.remove('open');
-      img.src = '';
-    }
-    function downloadSample(which){
-      const content = `Sample: ${which}\nPlaceholder text.`;
-      const blob = new Blob([content], {type: 'text/plain'});
-      const a = document.createElement('a');
-      a.href = URL.createObjectURL(blob);
-      a.download = which + '.txt';
-      document.body.appendChild(a); a.click(); a.remove();
-    }
-    function downloadHTML(){
-      const blob = new Blob([document.documentElement.outerHTML], {type: 'text/html'});
-      const a = document.createElement('a');
-      a.href = URL.createObjectURL(blob);
-      a.download = 'writing-samples-light.html';
-      document.body.appendChild(a); a.click(); a.remove();
-    }
-    function fakeShare(){
-      navigator.clipboard?.writeText(location.href).then(()=>{alert('Link copied')}).catch(()=>{alert('Use Download HTML to save locally.')});
-    }
+    const buttons=document.querySelectorAll('.tab-btn');
+    const contents=document.querySelectorAll('.tab-content');
+    buttons.forEach(btn=>{
+      btn.addEventListener('click',()=>{
+        buttons.forEach(b=>b.classList.remove('active'));
+        btn.classList.add('active');
+        const tabId=btn.getAttribute('data-tab');
+        contents.forEach(c=>{c.style.display=(c.id===tabId)?'block':'none'});
+      });
+    });
   </script>
 </body>
 </html>
