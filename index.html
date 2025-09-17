@@ -1,128 +1,227 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Writing Samples Portfolio</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Writing Samples — User Guides · Release Notes · Style Guides</title>
+  <meta name="description" content="Minimalist light theme writing samples page with user guides, release notes and style guides." />
   <style>
-    body {
-      margin: 0;
-      font-family: 'Segoe UI', Arial, sans-serif;
-      background: #fafafd;
-      color: #232b2b;
+    /* ---------- Light minimalist theme ---------- */
+    :root{
+      --bg:#fdfdfd;
+      --card:#ffffff;
+      --accent:#004aad;  /* deep blue */
+      --accent-2:#007b83; /* teal */
+      --muted:#555;
+      --radius:12px;
+      color-scheme: light;
     }
-    .container {
-      max-width: 680px;
-      margin: 56px auto;
-      background: #fff;
-      border-radius: 13px;
-      box-shadow: 0 3px 24px #d3d3d350;
-      padding: 0 0 28px 0;
-    }
-    h1 {
-      text-align: center;
-      font-size: 2em;
-      letter-spacing: 1px;
-      font-weight: 600;
-      background: linear-gradient(90deg, #765d69 4%, #517fa4 60%, #aad8d3 100%);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      margin: 0;
-      padding: 34px 0 10px 0;
-    }
-    .tabs {
-      display: flex;
-      border-bottom: 1.5px solid #ececec;
-      margin: 0 30px;
-    }
-    .tablink {
-      flex: 1;
-      text-align: center;
-      font-size: 1.06em;
-      padding: 15px 0 13px 0;
-      background: none;
-      outline: none;
-      border: none;
-      border-bottom: 2.7px solid transparent;
-      cursor: pointer;
-      font-weight: 500;
-      color: #626262;
-      transition: border-bottom 0.23s, color 0.2s;
-    }
-    .tablink.active {
-      color: #517fa4;
-      border-bottom: 2.7px solid #517fa4;
-      font-weight: 600;
-      background: #f0f8ff88;
-    }
-    .tab-content {
-      display: none;
-      padding: 18px 44px 13px 44px;
-      animation: fadeIn 0.44s;
-    }
-    .tab-content.active {
-      display: block;
-    }
-    .sample-list {
-      list-style: none;
-      padding: 0;
-      margin: 0;
-    }
-    .sample-list li {
-      padding: 13px 0 15px 0;
-      border-bottom: 1px solid #f0f0f0;
-      font-size: 1.06em;
-      color: #3b3b3b;
-    }
-    .sample-list li:last-child {
-      border: none;
-    }
-    @media (max-width: 600px) {
-      .container { margin: 16px; }
-      .tab-content { padding: 16px 9px 7px 9px; }
-      .tabs { margin: 0 7px; }
-    }
-    @keyframes fadeIn { from {opacity: 0;} to {opacity: 1;} }
+    *{box-sizing:border-box}
+    html,body{height:100%;margin:0;font-family: Inter, ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial; background:var(--bg); color:#222}
+    a{color:var(--accent);text-decoration:none}
+    header{display:flex;align-items:center;justify-content:space-between;padding:20px 30px;background:#f5f5f5;border-bottom:1px solid #ddd}
+    .brand{display:flex;gap:12px;align-items:center}
+    .logo{width:48px;height:48px;border-radius:8px;background:var(--accent);display:grid;place-items:center;font-weight:700;color:#fff}
+    .title{font-size:18px;letter-spacing:0.05em}
+    .subtitle{font-size:13px;color:var(--muted)}
+
+    main{max-width:1100px;margin:20px auto;padding:20px;}
+    .grid{display:grid;grid-template-columns:1fr 300px;gap:20px}
+
+    .card{background:var(--card);border-radius:var(--radius);padding:20px;border:1px solid #e0e0e0;box-shadow: 0 2px 6px rgba(0,0,0,0.05)}
+    h2{margin:0 0 10px 0;color:var(--accent)}
+    .muted{color:var(--muted);font-size:13px}
+
+    .tabs{display:flex;gap:8px;margin-bottom:14px}
+    .tab{padding:6px 10px;border-radius:6px;background:#f0f0f0;cursor:pointer;border:1px solid #ddd;font-size:14px}
+    .tab.active{background:#e6f0fa;border-color:#c5d9f2;color:var(--accent)}
+
+    .sample{display:grid;grid-template-columns:100px 1fr;gap:12px;align-items:start;padding:10px;border-radius:8px;background:#fafafa;border:1px solid #eee}
+    .thumb{height:70px;border-radius:6px;overflow:hidden;display:grid;place-items:center;background:var(--accent);color:#fff;font-weight:700}
+    .meta{font-size:14px}
+    .cta{display:inline-block;margin-top:8px;padding:8px 12px;border-radius:6px;background:var(--accent);color:#fff;font-weight:600;font-size:14px}
+
+    aside{position:sticky;top:20px;height:fit-content}
+    .card.small{padding:14px}
+
+    .procedure{display:grid;grid-template-columns:1fr 280px;gap:16px}
+    .steps{padding:12px;border-radius:10px;background:#fafafa;border:1px solid #eee}
+    .step{display:flex;gap:12px;padding:10px;border-radius:8px;margin-bottom:10px;border:1px solid #ddd;background:#fff}
+    .step .num{width:36px;height:36px;border-radius:8px;background:var(--accent-2);display:grid;place-items:center;font-weight:700;color:#fff}
+    .step .desc{font-size:14px}
+    .step .screenshot{margin-top:10px;border-radius:6px;overflow:hidden;border:1px solid #ddd}
+
+    .img-modal{position:fixed;inset:0;background:rgba(0,0,0,0.6);display:none;place-items:center;padding:20px}
+    .img-modal.open{display:grid}
+    .img-modal img{max-width:95%;max-height:90%;border-radius:10px}
+
+    table{width:100%;border-collapse:collapse;font-size:13px}
+    th,td{padding:8px;border-bottom:1px solid #eee;text-align:left}
+    th{color:#333;font-weight:600;background:#f5f5f5}
+
+    footer{margin-top:20px;padding:16px;text-align:center;color:var(--muted);font-size:13px;border-top:1px solid #eee}
+
+    @media (max-width:900px){.grid{grid-template-columns:1fr}.procedure{grid-template-columns:1fr}}
   </style>
 </head>
 <body>
-  <div class="container">
-    <h1>Writing Samples</h1>
-    <div class="tabs">
-      <button class="tablink active" onclick="showTab('guides')">User Guides</button>
-      <button class="tablink" onclick="showTab('release')">Release Notes</button>
-      <button class="tablink" onclick="showTab('style')">Style Guides</button>
+  <header>
+    <div class="brand">
+      <div class="logo">WS</div>
+      <div>
+        <div class="title">Writing Samples</div>
+        <div class="subtitle">User guides · Release notes · Style guides</div>
+      </div>
     </div>
-    <div id="guides" class="tab-content active">
-      <ul class="sample-list">
-        <li><strong>Getting Started with Product X</strong><br>A concise onboarding flow to help users swiftly navigate first-time set-up.</li>
-        <li><strong>Advanced Features Guide</strong><br>Clear instructions with visuals for using automation, integrations, and bulk actions.</li>
-        <li><strong>How-to: Export & Share Data</strong><br>Direct, step-wise guidance for exporting and securely sharing user data.</li>
-      </ul>
+    <nav aria-label="top actions">
+      <button class="tab active" onclick="fakeShare()">Share sample</button>
+      <button class="tab" onclick="downloadHTML()">Download HTML</button>
+    </nav>
+  </header>
+
+  <main>
+    <div class="grid">
+      <section>
+        <div class="card">
+          <h2>User Guides — sample procedures</h2>
+          <div class="muted">Detailed step-by-step with images</div>
+
+          <div class="tabs" role="tablist" aria-label="guide tabs">
+            <div class="tab active" role="tab">Procedure A</div>
+            <div class="tab" role="tab">Procedure B</div>
+            <div class="tab" role="tab">Settings Walkthrough</div>
+          </div>
+
+          <div class="procedure">
+            <div class="steps" id="steps">
+              <div class="step">
+                <div class="num">1</div>
+                <div class="desc">
+                  <strong>Open the application</strong>
+                  <div class="muted">Description</div>
+                  <div style="margin-top:6px">Launch the app from the desktop or Start menu. If browser, go to <code>https://app.example.local</code>.</div>
+                </div>
+              </div>
+              <div class="step">
+                <div class="num">2</div>
+                <div class="desc">
+                  <strong>Sign in with credentials</strong>
+                  <div class="muted">User authentication</div>
+                  <ol style="margin-top:6px;padding-left:18px">
+                    <li>Enter your company email.</li>
+                    <li>Click <em>Send code</em> if MFA enabled.</li>
+                    <li>Enter the 6-digit code and click <em>Continue</em>.</li>
+                  </ol>
+                </div>
+              </div>
+              <div class="step">
+                <div class="num">3</div>
+                <div class="desc">
+                  <strong>Complete the task</strong>
+                  <div class="muted">Performing the operation</div>
+                  <p style="margin-top:6px">Navigate to <strong>Tasks → Create</strong>, fill fields, and click <strong>Submit</strong>.</p>
+                </div>
+              </div>
+            </div>
+
+            <aside>
+              <div class="card small">
+                <strong>Quick checklist</strong>
+                <ul style="margin-top:6px;padding-left:18px;color:var(--muted)">
+                  <li>Account ready</li>
+                  <li>Network stable</li>
+                  <li>MFA device nearby</li>
+                </ul>
+                <a class="cta" href="#" onclick="downloadSample('user-guide')">Download sample</a>
+              </div>
+            </aside>
+          </div>
+        </div>
+
+        <div style="height:16px"></div>
+        <div class="card">
+          <h2>Release Notes — v3.4.0 (sample)</h2>
+          <div class="muted">Concise, scannable changelog</div>
+          <table style="margin-top:10px">
+            <thead><tr><th>Type</th><th>Description</th><th>Impact</th></tr></thead>
+            <tbody>
+              <tr><td>Feature</td><td>New bulk-upload tool for assets.</td><td>Improves speed</td></tr>
+              <tr><td>Bugfix</td><td>Resolved login race condition.</td><td>Reliability</td></tr>
+              <tr><td>Docs</td><td>Added troubleshooting for MFA errors.</td><td>User guidance</td></tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div style="height:16px"></div>
+        <div class="card">
+          <h2>Style Guide — voice & tone (snippet)</h2>
+          <div class="muted">Helpful and consistent</div>
+          <ol style="margin-top:8px;padding-left:18px">
+            <li><strong>Voice:</strong> Professional, direct.</li>
+            <li><strong>Tone:</strong> Use active voice, short sentences.</li>
+            <li><strong>Terminology:</strong> Always use product name.</li>
+            <li><strong>Formatting:</strong> Numbered steps, bold UI actions.</li>
+          </ol>
+        </div>
+      </section>
+
+      <aside>
+        <div class="card">
+          <h3>Overview</h3>
+          <div class="muted">Curated samples demonstrating structure and clarity.</div>
+        </div>
+
+        <div style="height:12px"></div>
+
+        <div class="card">
+          <h3>Contact</h3>
+          <div class="muted">Want edits or different tone?</div>
+          <div style="margin-top:8px">
+            <button class="tab" onclick="alert('Use Download HTML to save locally.')">Request edits</button>
+          </div>
+        </div>
+      </aside>
     </div>
-    <div id="release" class="tab-content">
-      <ul class="sample-list">
-        <li><strong>V2.3 Release Overview</strong><br>Summaries of key features, improvements, and deprecated options.</li>
-        <li><strong>Bugfix & Patch Spotlight</strong><br>Clear bullet-points listing fixed issues and impact timelines for each fix.</li>
-        <li><strong>Mobile App Rollout Note</strong><br>Notification of new app release with download and upgrade instructions.</li>
-      </ul>
-    </div>
-    <div id="style" class="tab-content">
-      <ul class="sample-list">
-        <li><strong>Voice & Tone Guidance</strong><br>Unified tone-of-voice and language protocols for all user-facing content.</li>
-        <li><strong>Formatting Consistency Rules</strong><br>Practical rules for titles, numbering, and information hierarchy.</li>
-        <li><strong>Accessibility Checklist</strong><br>Guidelines to ensure documents are inclusive and easy to navigate for all users.</li>
-      </ul>
-    </div>
+
+    <footer>
+      © Writing Samples • Light theme template
+    </footer>
+  </main>
+
+  <div id="imgModal" class="img-modal" role="dialog" aria-modal="true" onclick="closeImage()">
+    <img id="imgModalImg" alt="screenshot preview"/>
   </div>
+
   <script>
-    function showTab(tabId) {
-      const tabs = document.querySelectorAll('.tab-content');
-      const buttons = document.querySelectorAll('.tablink');
-      tabs.forEach(tab => tab.classList.remove('active'));
-      buttons.forEach(btn => btn.classList.remove('active'));
-      document.getElementById(tabId).classList.add('active');
-      event.target.classList.add('active');
+    function openImage(id){
+      const modal = document.getElementById('imgModal');
+      const img = document.getElementById('imgModalImg');
+      img.src = 'https://via.placeholder.com/800x500.png?text=Screenshot';
+      modal.classList.add('open');
+    }
+    function closeImage(){
+      const modal = document.getElementById('imgModal');
+      const img = document.getElementById('imgModalImg');
+      modal.classList.remove('open');
+      img.src = '';
+    }
+    function downloadSample(which){
+      const content = `Sample: ${which}\nPlaceholder text.`;
+      const blob = new Blob([content], {type: 'text/plain'});
+      const a = document.createElement('a');
+      a.href = URL.createObjectURL(blob);
+      a.download = which + '.txt';
+      document.body.appendChild(a); a.click(); a.remove();
+    }
+    function downloadHTML(){
+      const blob = new Blob([document.documentElement.outerHTML], {type: 'text/html'});
+      const a = document.createElement('a');
+      a.href = URL.createObjectURL(blob);
+      a.download = 'writing-samples-light.html';
+      document.body.appendChild(a); a.click(); a.remove();
+    }
+    function fakeShare(){
+      navigator.clipboard?.writeText(location.href).then(()=>{alert('Link copied')}).catch(()=>{alert('Use Download HTML to save locally.')});
     }
   </script>
 </body>
