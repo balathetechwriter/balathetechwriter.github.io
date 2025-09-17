@@ -6,151 +6,44 @@
   <title>Writing Samples — Tabs Layout</title>
   <style>
     :root{
-      --bg:#fdfdfd;
+      --bg:#f9fafc;
       --card:#ffffff;
-      --accent:#2a5d9f;
-      --accent-2:#4aa3a2;
-      --accent-3:#f0a500;
-      --accent-4:#b56576;
+      --accent:#004aad;
+      --accent-2:#007b83;
+      --accent-3:#f4b400;
+      --accent-4:#e67e22;
       --muted:#555;
-      --soft-border:#e6e6e6;
       --radius:14px;
     }
-    body{
-      margin:0;
-      font-family:'Segoe UI',Arial,sans-serif;
-      background:var(--bg);
-      color:#222;
-      line-height:1.6;
-      overflow-x:hidden;
-    }
-    header{
-      padding:20px 30px;
-      background:var(--accent);
-      color:#fff;
-      display:flex;
-      align-items:center;
-      justify-content:space-between;
-      position:relative;
-      z-index:10;
-      box-shadow:0 2px 6px rgba(0,0,0,0.15);
-    }
-    .logo{
-      font-size:22px;
-      font-weight:bold;
-      letter-spacing:0.5px;
-    }
-    .tabs{display:flex;gap:15px}
-    .tabs button{
-      background:rgba(255,255,255,0.2);
-      border:none;
-      font-size:15px;
-      font-weight:600;
-      color:#fff;
-      cursor:pointer;
-      padding:8px 14px;
-      border-radius:8px;
-      transition:all .3s;
-    }
-    .tabs button:hover{background:rgba(255,255,255,0.35)}
-    .tabs button.active{background:#fff;color:var(--accent)}
-
-    .content{
-      max-width:1000px;
-      margin:40px auto;
-      padding:0 20px;
-      position:relative;
-      z-index:5;
-    }
-    .card{
-      background:var(--card);
-      border-radius:var(--radius);
-      padding:28px;
-      border:1px solid var(--soft-border);
-      box-shadow:0 4px 16px rgba(0,0,0,0.08);
-      animation:fadeIn .6s ease;
-      transition:transform .3s;
-    }
-    .card:hover{transform:translateY(-4px)}
-
-    h2{margin-top:0;color:var(--accent);font-size:1.7rem;border-bottom:2px solid var(--accent-2);padding-bottom:8px}
-    .muted{color:var(--muted);font-size:14px;margin-bottom:16px}
-
-    ol.procedure-list{padding-left:22px}
-    ol.procedure-list li{margin-bottom:12px;padding-left:4px}
-
-    ol.style-points{padding-left:22px}
-    ol.style-points li{margin-bottom:10px;padding-left:4px}
-
-    table{width:100%;border-collapse:collapse;margin-top:16px;font-size:15px}
-    table th, table td{border:1px solid var(--soft-border);padding:10px;text-align:left;vertical-align:top}
-    table th{background:#f0f6fb;color:#222}
-    table tr:nth-child(even){background:#fafafa}
-
-    footer{
-      text-align:center;
-      padding:18px;
-      border-top:1px solid #eee;
-      color:var(--muted);
-      font-size:13px;
-      margin-top:50px;
-      position:relative;
-      z-index:10;
-    }
+    body{margin:0;font-family:Segoe UI,Arial,sans-serif;background:var(--bg);color:#222;line-height:1.6;overflow-x:hidden}
+    header{padding:20px 30px;background:#ffffff;border-bottom:1px solid #ddd;display:flex;align-items:center;justify-content:space-between;position:relative;z-index:10;box-shadow:0 2px 6px rgba(0,0,0,0.05)}
+    .logo{font-size:22px;font-weight:bold;color:var(--accent);letter-spacing:0.5px}
+    .tabs{display:flex;gap:20px}
+    .tabs button{background:none;border:none;font-size:15px;font-weight:600;color:var(--muted);cursor:pointer;padding:8px 14px;border-radius:6px;transition:all .3s;position:relative}
+    .tabs button:hover{color:var(--accent)}
+    .tabs button.active{color:#fff;background:var(--accent);box-shadow:0 3px 8px rgba(0,0,0,0.15)}
+    .content{max-width:1000px;margin:40px auto;padding:0 20px;position:relative;z-index:5}
+    .card{background:var(--card);border-radius:var(--radius);padding:26px;border:1px solid #e0e0e0;box-shadow:0 4px 12px rgba(0,0,0,0.08);animation:fadeIn .6s ease}
+    h2{margin-top:0;color:var(--accent);font-size:1.6rem;letter-spacing:0.5px}
+    .muted{color:var(--muted);font-size:14px;margin-bottom:12px;font-style:italic}
+    ol.procedure-list{padding-left:20px}
+    ol.procedure-list li{margin-bottom:10px;transition:transform .2s}
+    ol.procedure-list li:hover{transform:translateX(6px)}
+    ol.style-points{padding-left:20px}
+    ol.style-points li{margin-bottom:8px;transition:background .2s,padding-left .2s}
+    ol.style-points li:hover{background:#f0f4ff;padding-left:6px}
+    table{width:100%;border-collapse:collapse;margin-top:12px;font-size:15px}
+    table th, table td{border:1px solid #ddd;padding:10px;text-align:left;vertical-align:top}
+    table th{background:#f4f7fb;color:#222}
+    footer{text-align:center;padding:16px;border-top:1px solid #eee;color:var(--muted);font-size:13px;margin-top:40px;position:relative;z-index:10}
 
     /* Floating shapes */
-    .shape{
-      position:absolute;
-      opacity:0.15;
-      z-index:1;
-      animation:float 14s infinite ease-in-out;
-    }
-    .square{
-      width:50px;height:50px;
-      background:var(--accent-2);
-      top:20%;left:10%;
-      animation:rotate 18s infinite linear;
-    }
-    .line{
-      width:100px;height:6px;
-      background:var(--accent);
-      top:50%;left:5%;
-      transform:rotate(20deg);
-      animation:rotate 14s infinite linear;
-    }
-    .hollow-circle{
-      width:90px;height:90px;
-      border:3px solid var(--accent-3);
-      border-radius:50%;
-      top:35%;right:12%;
-      animation:rotate 20s infinite linear;
-    }
-    .rectangle{
-      width:80px;height:40px;
-      background:var(--accent-4);
-      top:70%;left:20%;
-      animation:rotate 16s infinite linear;
-    }
-    .star{
-      width:0;height:0;
-      position:absolute;
-      top:15%;right:8%;
-      border-left:20px solid transparent;
-      border-right:20px solid transparent;
-      border-bottom:40px solid var(--accent-2);
-      transform:rotate(35deg);
-      animation:rotate 22s infinite linear;
-    }
-    .star:before{
-      content:"";
-      position:absolute;
-      top:-23px;left:-20px;
-      width:0;height:0;
-      border-left:20px solid transparent;
-      border-right:20px solid transparent;
-      border-bottom:40px solid var(--accent-2);
-      transform:rotate(-70deg);
-    }
+    .shape{position:absolute;opacity:0.15;z-index:1;animation:float 14s infinite ease-in-out;}
+    .square{width:50px;height:50px;background:var(--accent-2);top:15%;left:5%;animation:rotate 20s linear infinite, float 12s infinite ease-in-out}
+    .rectangle{width:80px;height:30px;background:var(--accent-3);top:40%;right:10%;animation:rotate 16s linear infinite, float 10s infinite ease-in-out}
+    .line{width:100px;height:6px;background:var(--accent);top:25%;left:70%;animation:rotate 22s linear infinite, float 11s infinite ease-in-out}
+    .hollow-circle{width:80px;height:80px;border:5px solid var(--accent-4);border-radius:50%;bottom:15%;left:20%;animation:rotate 18s linear infinite, float 14s infinite ease-in-out}
+    .star{width:0;height:0;border-left:30px solid transparent;border-right:30px solid transparent;border-bottom:60px solid var(--accent);top:60%;right:20%;transform:rotate(35deg);clip-path:polygon(50% 0%,61% 35%,98% 35%,68% 57%,79% 91%,50% 70%,21% 91%,32% 57%,2% 35%,39% 35%);animation:rotate 24s linear infinite, float 15s infinite ease-in-out}
 
     @keyframes float{
       0%,100%{transform:translateY(0)}
@@ -178,9 +71,9 @@
 
   <!-- floating shapes -->
   <div class="shape square"></div>
+  <div class="shape rectangle"></div>
   <div class="shape line"></div>
   <div class="shape hollow-circle"></div>
-  <div class="shape rectangle"></div>
   <div class="shape star"></div>
 
   <main class="content">
@@ -262,7 +155,10 @@
         buttons.forEach(b=>b.classList.remove('active'));
         btn.classList.add('active');
         const tabId=btn.getAttribute('data-tab');
-        contents.forEach(c=>{c.style.display=(c.id===tabId)?'block':'none'});
+        contents.forEach(c=>{
+          c.style.display=(c.id===tabId)?'block':'none';
+          if(c.id===tabId){c.style.animation='fadeIn .6s ease'}
+        });
       });
     });
   </script>
