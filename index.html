@@ -10,6 +10,8 @@
       --card:#ffffff;
       --accent:#2a5d9f;
       --accent-2:#4aa3a2;
+      --accent-3:#f0a500;
+      --accent-4:#b56576;
       --muted:#555;
       --soft-border:#e6e6e6;
       --radius:14px;
@@ -24,7 +26,7 @@
     }
     header{
       padding:20px 30px;
-      background:linear-gradient(90deg,var(--accent),var(--accent-2));
+      background:var(--accent);
       color:#fff;
       display:flex;
       align-items:center;
@@ -97,19 +99,70 @@
     }
 
     /* Floating shapes */
-    .shape{position:absolute;border-radius:50%;opacity:0.1;z-index:1;animation:float 14s infinite ease-in-out}
-    .shape.small{width:50px;height:50px;background:var(--accent-2);top:20%;left:8%}
-    .shape.medium{width:110px;height:110px;background:var(--accent);top:45%;right:12%}
-    .shape.large{width:180px;height:180px;background:#aaa;bottom:12%;left:18%}
+    .shape{
+      position:absolute;
+      opacity:0.15;
+      z-index:1;
+      animation:float 14s infinite ease-in-out;
+    }
+    .square{
+      width:50px;height:50px;
+      background:var(--accent-2);
+      top:20%;left:10%;
+      animation:rotate 18s infinite linear;
+    }
+    .line{
+      width:100px;height:6px;
+      background:var(--accent);
+      top:50%;left:5%;
+      transform:rotate(20deg);
+      animation:rotate 14s infinite linear;
+    }
+    .hollow-circle{
+      width:90px;height:90px;
+      border:3px solid var(--accent-3);
+      border-radius:50%;
+      top:35%;right:12%;
+      animation:rotate 20s infinite linear;
+    }
+    .rectangle{
+      width:80px;height:40px;
+      background:var(--accent-4);
+      top:70%;left:20%;
+      animation:rotate 16s infinite linear;
+    }
+    .star{
+      width:0;height:0;
+      position:absolute;
+      top:15%;right:8%;
+      border-left:20px solid transparent;
+      border-right:20px solid transparent;
+      border-bottom:40px solid var(--accent-2);
+      transform:rotate(35deg);
+      animation:rotate 22s infinite linear;
+    }
+    .star:before{
+      content:"";
+      position:absolute;
+      top:-23px;left:-20px;
+      width:0;height:0;
+      border-left:20px solid transparent;
+      border-right:20px solid transparent;
+      border-bottom:40px solid var(--accent-2);
+      transform:rotate(-70deg);
+    }
 
     @keyframes float{
       0%,100%{transform:translateY(0)}
       50%{transform:translateY(-25px)}
     }
-
     @keyframes fadeIn{
       from{opacity:0;transform:translateY(20px)}
       to{opacity:1;transform:translateY(0)}
+    }
+    @keyframes rotate{
+      from{transform:rotate(0deg)}
+      to{transform:rotate(360deg)}
     }
   </style>
 </head>
@@ -124,9 +177,11 @@
   </header>
 
   <!-- floating shapes -->
-  <div class="shape small"></div>
-  <div class="shape medium"></div>
-  <div class="shape large"></div>
+  <div class="shape square"></div>
+  <div class="shape line"></div>
+  <div class="shape hollow-circle"></div>
+  <div class="shape rectangle"></div>
+  <div class="shape star"></div>
 
   <main class="content">
 
