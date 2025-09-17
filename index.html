@@ -9,54 +9,35 @@
       --bg:#f9fafc;
       --card:#ffffff;
       --accent:#004aad;
-      --accent-2:#007b83;
-      --accent-3:#f4b400;
-      --accent-4:#e67e22;
       --muted:#555;
       --radius:14px;
+      --transition-duration:0.5s;
     }
     body{margin:0;font-family:Segoe UI,Arial,sans-serif;background:var(--bg);color:#222;line-height:1.6;overflow-x:hidden}
-    header{padding:20px 30px;background:#ffffff;border-bottom:1px solid #ddd;display:flex;align-items:center;justify-content:space-between;position:relative;z-index:10;box-shadow:0 2px 6px rgba(0,0,0,0.05)}
-    .logo{font-size:22px;font-weight:bold;color:var(--accent);letter-spacing:0.5px}
-    .tabs{display:flex;gap:20px}
-    .tabs button{background:none;border:none;font-size:15px;font-weight:600;color:var(--muted);cursor:pointer;padding:8px 14px;border-radius:6px;transition:all .3s;position:relative}
-    .tabs button:hover{color:var(--accent)}
-    .tabs button.active{color:#fff;background:var(--accent);box-shadow:0 3px 8px rgba(0,0,0,0.15)}
+    header{padding:20px 30px;background:var(--accent);color:#fff;display:flex;align-items:center;justify-content:space-between;position:relative;z-index:10;box-shadow:0 2px 6px rgba(0,0,0,0.05)}
+    .logo{font-size:22px;font-weight:bold;color:#fff;letter-spacing:0.5px}
+    .tabs{display:flex;gap:20px;position:relative}
+    .tabs button{background:none;border:none;font-size:15px;font-weight:600;color:rgba(255,255,255,0.8);cursor:pointer;padding:8px 14px;position:relative;transition:color var(--transition-duration)}
+    .tabs button.active{color:#fff}
+    .tab-underline{position:absolute;bottom:0;height:3px;background:#fff;transition:all var(--transition-duration);border-radius:2px}
+
     .content{max-width:1000px;margin:40px auto;padding:0 20px;position:relative;z-index:5}
-    .card{background:var(--card);border-radius:var(--radius);padding:26px;border:1px solid #e0e0e0;box-shadow:0 4px 12px rgba(0,0,0,0.08);animation:fadeIn .6s ease}
+    .card{background:var(--card);border-radius:var(--radius);padding:26px;border:1px solid #e0e0e0;box-shadow:0 4px 12px rgba(0,0,0,0.08);opacity:0;transform:translateY(20px);transition:all var(--transition-duration)}
+    .card.show{opacity:1;transform:translateY(0)}
     h2{margin-top:0;color:var(--accent);font-size:1.6rem;letter-spacing:0.5px}
     .muted{color:var(--muted);font-size:14px;margin-bottom:12px;font-style:italic}
-    ol.procedure-list{padding-left:20px}
-    ol.procedure-list li{margin-bottom:10px;transition:transform .2s}
-    ol.procedure-list li:hover{transform:translateX(6px)}
-    ol.style-points{padding-left:20px}
-    ol.style-points li{margin-bottom:8px;transition:background .2s,padding-left .2s}
-    ol.style-points li:hover{background:#f0f4ff;padding-left:6px}
+
+    ol.procedure-list, ol.style-points{padding-left:20px}
+    ol.procedure-list li, ol.style-points li{margin-bottom:10px;opacity:0;transform:translateY(10px);transition:all 0.4s ease}
+    ol.procedure-list li.show, ol.style-points li.show{opacity:1;transform:translateY(0)}
+
     table{width:100%;border-collapse:collapse;margin-top:12px;font-size:15px}
     table th, table td{border:1px solid #ddd;padding:10px;text-align:left;vertical-align:top}
     table th{background:#f4f7fb;color:#222}
+    table tr{opacity:0;transform:translateY(10px);transition:all 0.4s ease}
+    table tr.show{opacity:1;transform:translateY(0)}
+
     footer{text-align:center;padding:16px;border-top:1px solid #eee;color:var(--muted);font-size:13px;margin-top:40px;position:relative;z-index:10}
-
-    /* Floating shapes */
-    .shape{position:absolute;opacity:0.15;z-index:1;animation:float 14s infinite ease-in-out;}
-    .square{width:50px;height:50px;background:var(--accent-2);top:15%;left:5%;animation:rotate 20s linear infinite, float 12s infinite ease-in-out}
-    .rectangle{width:80px;height:30px;background:var(--accent-3);top:40%;right:10%;animation:rotate 16s linear infinite, float 10s infinite ease-in-out}
-    .line{width:100px;height:6px;background:var(--accent);top:25%;left:70%;animation:rotate 22s linear infinite, float 11s infinite ease-in-out}
-    .hollow-circle{width:80px;height:80px;border:5px solid var(--accent-4);border-radius:50%;bottom:15%;left:20%;animation:rotate 18s linear infinite, float 14s infinite ease-in-out}
-    .star{width:0;height:0;border-left:30px solid transparent;border-right:30px solid transparent;border-bottom:60px solid var(--accent);top:60%;right:20%;transform:rotate(35deg);clip-path:polygon(50% 0%,61% 35%,98% 35%,68% 57%,79% 91%,50% 70%,21% 91%,32% 57%,2% 35%,39% 35%);animation:rotate 24s linear infinite, float 15s infinite ease-in-out}
-
-    @keyframes float{
-      0%,100%{transform:translateY(0)}
-      50%{transform:translateY(-25px)}
-    }
-    @keyframes fadeIn{
-      from{opacity:0;transform:translateY(20px)}
-      to{opacity:1;transform:translateY(0)}
-    }
-    @keyframes rotate{
-      from{transform:rotate(0deg)}
-      to{transform:rotate(360deg)}
-    }
   </style>
 </head>
 <body>
@@ -66,19 +47,12 @@
       <button class="tab-btn active" data-tab="procedure">Procedure</button>
       <button class="tab-btn" data-tab="releasenotes">Release Notes</button>
       <button class="tab-btn" data-tab="styleguide">Style Guide</button>
+      <div class="tab-underline"></div>
     </nav>
   </header>
 
-  <!-- floating shapes -->
-  <div class="shape square"></div>
-  <div class="shape rectangle"></div>
-  <div class="shape line"></div>
-  <div class="shape hollow-circle"></div>
-  <div class="shape star"></div>
-
   <main class="content">
-
-    <section id="procedure" class="tab-content card">
+    <section id="procedure" class="tab-content card show">
       <h2>User Guide — Sample Procedure</h2>
       <div class="muted">Concise step-by-step instructions</div>
       <ol class="procedure-list">
@@ -140,7 +114,6 @@
         <li>Always test procedures to ensure accuracy.</li>
       </ol>
     </section>
-
   </main>
 
   <footer>
@@ -150,17 +123,37 @@
   <script>
     const buttons=document.querySelectorAll('.tab-btn');
     const contents=document.querySelectorAll('.tab-content');
+    const underline=document.querySelector('.tab-underline');
+
+    function setUnderline(){
+      const activeBtn=document.querySelector('.tab-btn.active');
+      underline.style.width=activeBtn.offsetWidth+'px';
+      underline.style.left=activeBtn.offsetLeft+'px';
+    }
+    window.addEventListener('resize',setUnderline);
+
     buttons.forEach(btn=>{
       btn.addEventListener('click',()=>{
         buttons.forEach(b=>b.classList.remove('active'));
         btn.classList.add('active');
-        const tabId=btn.getAttribute('data-tab');
         contents.forEach(c=>{
-          c.style.display=(c.id===tabId)?'block':'none';
-          if(c.id===tabId){c.style.animation='fadeIn .6s ease'}
+          c.style.display=(c.id===btn.dataset.tab)?'block':'none';
+          if(c.id===btn.dataset.tab){
+            setTimeout(()=>c.classList.add('show'),50);
+            // Animate list items and table rows
+            const lis=c.querySelectorAll('ol li');
+            lis.forEach((li,i)=>{setTimeout(()=>li.classList.add('show'),i*150)});
+            const rows=c.querySelectorAll('table tr');
+            rows.forEach((row,i)=>{setTimeout(()=>row.classList.add('show'),i*100)});
+          } else { c.classList.remove('show'); c.querySelectorAll('ol li, table tr').forEach(el=>el.classList.remove('show'));}
         });
+        setUnderline();
       });
     });
+
+    setUnderline();
+    // Initial animation for first tab
+    document.querySelectorAll('#procedure ol li').forEach((li,i)=>setTimeout(()=>li.classList.add('show'),i*150));
   </script>
 </body>
 </html>
