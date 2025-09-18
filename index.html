@@ -14,25 +14,26 @@
       --transition-duration:0.5s;
     }
     body{margin:0;font-family:Segoe UI,Arial,sans-serif;background:var(--bg);color:#222;line-height:1.6;overflow-x:hidden;position:relative}
-    
-    /* Floating triangle */
-    body::before{
-      content:"";
-      position:absolute;
-      top:20%;
-      right:-150px;
-      width:0;
-      height:0;
-      border-left:300px solid transparent;
-      border-right:300px solid transparent;
-      border-bottom:520px solid rgba(0,74,173,0.08);
+
+    /* Hollow floating triangle */
+    .triangle{
+      position:fixed;
+      top:25%;
+      right:-180px;
+      width:320px;
+      height:280px;
+      background:transparent;
+      border-left:2px solid rgba(0,74,173,0.4);
+      border-bottom:2px solid rgba(0,74,173,0.4);
+      border-right:2px solid rgba(0,74,173,0.4);
       transform:rotate(15deg);
       z-index:0;
-      animation:floatTriangle 18s ease-in-out infinite alternate;
+      animation:floatFast 6s ease-in-out infinite alternate;
+      pointer-events:none;
     }
-    @keyframes floatTriangle{
+    @keyframes floatFast{
       0%{transform:translateY(0) rotate(15deg);}
-      50%{transform:translateY(-40px) rotate(17deg);}
+      50%{transform:translateY(-60px) rotate(20deg);}
       100%{transform:translateY(0) rotate(15deg);}
     }
 
@@ -61,9 +62,15 @@
     table tr.show{opacity:1;transform:translateY(0)}
 
     footer{text-align:center;padding:16px;border-top:1px solid #eee;color:var(--muted);font-size:13px;margin-top:40px;position:relative;z-index:10}
+    .example{margin:10px 0;padding:8px 12px;border-radius:6px}
+    .correct{background:#e8f7e9;border:1px solid #b6e2b8;color:#245c2d}
+    .incorrect{background:#fdeaea;border:1px solid #f5b5b5;color:#9b1c1c}
   </style>
 </head>
 <body>
+  <!-- Floating hollow triangle -->
+  <div class="triangle"></div>
+
   <header>
     <div class="logo">Writing Samples</div>
     <nav class="tabs">
@@ -147,8 +154,40 @@
         <li><a href="#adaptive">Adaptive</a></li>
       </ul>
 
-      <!-- rest of style guide content stays same as last version -->
-      <!-- ... (trimmed here for brevity, but keep full style guide code from earlier response) -->
+      <h3 id="concise">Be Concise</h3>
+      <p>For every word, ask “Is it needed?”</p>
+      <div class="example correct">Correct: Click <strong>Save</strong>.</div>
+      <div class="example incorrect">Incorrect: You should now go ahead and click the <strong>Save</strong> button.</div>
+
+      <h3 id="consistent">Be Consistent</h3>
+      <p>Use the same terms, style, and formatting throughout.</p>
+      <div class="example correct">Correct: Use either “sign in” everywhere.</div>
+      <div class="example incorrect">Incorrect: Mixing “log in”, “login”, and “sign in”.</div>
+
+      <h3 id="clear">Be Clear</h3>
+      <p>Avoid jargon, use plain language, and match the user’s vocabulary.</p>
+      <div class="example correct">Correct: Select <strong>Print</strong> to print the document.</div>
+      <div class="example incorrect">Incorrect: Execute the output routine to initiate hard-copy generation.</div>
+
+      <h3 id="complete">Be Complete</h3>
+      <p>Ensure no step or explanation is missing.</p>
+      <div class="example correct">Correct: After installation, restart your computer before opening the app.</div>
+      <div class="example incorrect">Incorrect: After installation, open the app. (Restart required is missing)</div>
+
+      <h3 id="empathetic">Be Empathetic</h3>
+      <p>Anticipate user confusion and provide reassurance.</p>
+      <div class="example correct">Correct: If you forget your password, click <strong>Forgot Password</strong> to reset it safely.</div>
+      <div class="example incorrect">Incorrect: Forgotten password? You’re stuck.</div>
+
+      <h3 id="enjoyable">Be Pleasant to Read</h3>
+      <p>Use active voice, positive phrasing, and a professional but approachable tone.</p>
+      <div class="example correct">Correct: You can customize your dashboard by selecting <strong>Settings → Dashboard</strong>.</div>
+      <div class="example incorrect">Incorrect: The dashboard is customizable if the appropriate option is selected in Settings.</div>
+
+      <h3 id="adaptive">Be Adaptive</h3>
+      <p>Tailor the content to different audiences, platforms, and levels of expertise.</p>
+      <div class="example correct">Correct: On mobile, tap the <strong>Menu</strong> icon. On desktop, click the <strong>Menu</strong> button.</div>
+      <div class="example incorrect">Incorrect: Just click the Menu button. (No mention of mobile users)</div>
     </section>
   </main>
 
