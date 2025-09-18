@@ -13,30 +13,7 @@
       --radius:14px;
       --transition-duration:0.5s;
     }
-    body{margin:0;font-family:Segoe UI,Arial,sans-serif;background:var(--bg);color:#222;line-height:1.6;overflow-x:hidden;position:relative}
-
-    /* Hollow floating triangle */
-    .triangle{
-      position:fixed;
-      top:25%;
-      right:-180px;
-      width:320px;
-      height:280px;
-      background:transparent;
-      border-left:2px solid rgba(0,74,173,0.4);
-      border-bottom:2px solid rgba(0,74,173,0.4);
-      border-right:2px solid rgba(0,74,173,0.4);
-      transform:rotate(15deg);
-      z-index:0;
-      animation:floatFast 6s ease-in-out infinite alternate;
-      pointer-events:none;
-    }
-    @keyframes floatFast{
-      0%{transform:translateY(0) rotate(15deg);}
-      50%{transform:translateY(-60px) rotate(20deg);}
-      100%{transform:translateY(0) rotate(15deg);}
-    }
-
+    body{margin:0;font-family:Segoe UI,Arial,sans-serif;background:var(--bg);color:#222;line-height:1.6;overflow-x:hidden}
     header{padding:20px 30px;background:var(--accent);color:#fff;display:flex;align-items:center;justify-content:space-between;position:relative;z-index:10;box-shadow:0 2px 6px rgba(0,0,0,0.05)}
     .logo{font-size:22px;font-weight:bold;color:#fff;letter-spacing:0.5px}
     .tabs{display:flex;gap:20px;position:relative}
@@ -62,15 +39,9 @@
     table tr.show{opacity:1;transform:translateY(0)}
 
     footer{text-align:center;padding:16px;border-top:1px solid #eee;color:var(--muted);font-size:13px;margin-top:40px;position:relative;z-index:10}
-    .example{margin:10px 0;padding:8px 12px;border-radius:6px}
-    .correct{background:#e8f7e9;border:1px solid #b6e2b8;color:#245c2d}
-    .incorrect{background:#fdeaea;border:1px solid #f5b5b5;color:#9b1c1c}
   </style>
 </head>
 <body>
-  <!-- Floating hollow triangle -->
-  <div class="triangle"></div>
-
   <header>
     <div class="logo">Writing Samples</div>
     <nav class="tabs">
@@ -82,7 +53,6 @@
   </header>
 
   <main class="content">
-    <!-- procedure tab -->
     <section id="procedure" class="tab-content card show">
       <h2>User Guide — Sample Procedure</h2>
       <div class="muted">Concise step-by-step instructions</div>
@@ -95,7 +65,6 @@
       </ol>
     </section>
 
-    <!-- release notes tab -->
     <section id="releasenotes" class="tab-content card" style="display:none">
       <h2>Release Notes — Sample</h2>
       <div class="muted">Version history with recent updates</div>
@@ -129,7 +98,6 @@
       </table>
     </section>
 
-    <!-- style guide tab -->
     <section id="styleguide" class="tab-content card" style="display:none">
       <h2>Style Guide — Technical Writing Guidelines</h2>
       <div class="muted">Guidelines for accurate, consistent, and user-focused documentation</div>
@@ -155,39 +123,92 @@
       </ul>
 
       <h3 id="concise">Be Concise</h3>
-      <p>For every word, ask “Is it needed?”</p>
-      <div class="example correct">Correct: Click <strong>Save</strong>.</div>
-      <div class="example incorrect">Incorrect: You should now go ahead and click the <strong>Save</strong> button.</div>
+      <p>
+        For every word, ask “Is it needed?” Technical writing isn’t like writing a school paper with a minimum word count—you don’t need filler.  
+        However, don’t sacrifice clarity on the altar of brevity. Use all the words you need to prevent ambiguity or distortion of meaning.  
+      </p>
+      <p>
+        Watch out for the word <em>of</em> and phrases such as “in order to,” “you can,” and “there are.” You often don’t need them.  
+      </p>
+
+      <ul>
+        <li><strong>Correct:</strong> To postpone a delivery, call 1-800-123-4567.<br>
+            <strong>Incorrect:</strong> In order to postpone a delivery, you can call us at 1-800-123-4567.</li>
+        <li><strong>Correct:</strong> Several restrictions apply to trial accounts.<br>
+            <strong>Incorrect:</strong> There are several restrictions that apply to trial accounts.</li>
+        <li><strong>Correct:</strong> This lets you change the background color.<br>
+            <strong>Incorrect:</strong> This lets you change the color of the background.</li>
+      </ul>
+
+      <p>Leave marketing copy to the marketing team. Avoid superlatives, excessive claims, clichés, and future tense unless necessary.</p>
+      <ul>
+        <li><strong>Correct:</strong> This button returns you to your dashboard.<br>
+            <strong>Incorrect:</strong> This button will return you to your dashboard.</li>
+        <li><strong>Correct:</strong> Invalid input triggers an error message.<br>
+            <strong>Incorrect:</strong> An error message is triggered by invalid input.</li>
+      </ul>
+      <p>Prefer simple vocabulary. There’s no need to use <em>obfuscate</em> if <em>hide</em> will do.</p>
 
       <h3 id="consistent">Be Consistent</h3>
-      <p>Use the same terms, style, and formatting throughout.</p>
-      <div class="example correct">Correct: Use either “sign in” everywhere.</div>
-      <div class="example incorrect">Incorrect: Mixing “log in”, “login”, and “sign in”.</div>
+      <p>
+        Use a <a href="https://learn.microsoft.com/style-guide/welcome/" target="_blank">style guide</a> as your baseline standard.  
+        If you’re the only writer, a style guide ensures consistency for future contributors.
+      </p>
+      <p>
+        Avoid interchanging synonyms for technical terms. For example, don’t mix “directory” and “folder” unless they mean different things.  
+        Consistency also applies to spelling (pick either US or UK English, not both).
+      </p>
 
       <h3 id="clear">Be Clear</h3>
-      <p>Avoid jargon, use plain language, and match the user’s vocabulary.</p>
-      <div class="example correct">Correct: Select <strong>Print</strong> to print the document.</div>
-      <div class="example incorrect">Incorrect: Execute the output routine to initiate hard-copy generation.</div>
-
-      <h3 id="complete">Be Complete</h3>
-      <p>Ensure no step or explanation is missing.</p>
-      <div class="example correct">Correct: After installation, restart your computer before opening the app.</div>
-      <div class="example incorrect">Incorrect: After installation, open the app. (Restart required is missing)</div>
+      <ul>
+        <li>Use a forward slash for folder paths.</li>
+        <li>Prefer “because” over “as” to indicate causation.</li>
+        <li>Use descriptive link text, not “click here.”</li>
+        <li>Ensure a logical information architecture with clear headings and navigation.</li>
+        <li>Avoid <em>e.g.</em> and <em>i.e.</em>; use “for example” or “that is.”</li>
+        <li>Place conditions at the start of sentences: <br>
+            <strong>Correct:</strong> To start over, delete this file. <br>
+            <strong>Incorrect:</strong> Delete this file to start over.</li>
+      </ul>
 
       <h3 id="empathetic">Be Empathetic</h3>
-      <p>Anticipate user confusion and provide reassurance.</p>
-      <div class="example correct">Correct: If you forget your password, click <strong>Forgot Password</strong> to reset it safely.</div>
-      <div class="example incorrect">Incorrect: Forgotten password? You’re stuck.</div>
+      <ul>
+        <li>Avoid “easily” and “simply”—they can feel patronizing if users struggle.</li>
+        <li>Define terms, acronyms, and abbreviations on first use.</li>
+        <li>Use inclusive language. Avoid biased or harmful terms such as <em>master/slave</em>, <em>whitelist/blacklist</em>, <em>dummy</em>, or <em>crazy</em>.</li>
+        <li>Provide diverse examples and avoid cultural assumptions.</li>
+        <li>Avoid colloquialisms—non-native speakers may not understand them.</li>
+      </ul>
 
-      <h3 id="enjoyable">Be Pleasant to Read</h3>
-      <p>Use active voice, positive phrasing, and a professional but approachable tone.</p>
-      <div class="example correct">Correct: You can customize your dashboard by selecting <strong>Settings → Dashboard</strong>.</div>
-      <div class="example incorrect">Incorrect: The dashboard is customizable if the appropriate option is selected in Settings.</div>
+      <h3 id="enjoyable">Be Enjoyable to Read</h3>
+      <ul>
+        <li>Vary sentence lengths.</li>
+        <li>Keep sentences under ~30 words.</li>
+        <li>Break up long paragraphs to avoid “wall-of-text.”</li>
+      </ul>
+
+      <h3 id="complete">Be Complete</h3>
+      <ul>
+        <li>Cover all supported platforms (Android, iOS, Windows, etc.).</li>
+        <li>Have reviewers follow your instructions, not just read them.</li>
+        <li>Provide example inputs, outputs, and error handling steps.</li>
+      </ul>
 
       <h3 id="adaptive">Be Adaptive</h3>
-      <p>Tailor the content to different audiences, platforms, and levels of expertise.</p>
-      <div class="example correct">Correct: On mobile, tap the <strong>Menu</strong> icon. On desktop, click the <strong>Menu</strong> button.</div>
-      <div class="example incorrect">Incorrect: Just click the Menu button. (No mention of mobile users)</div>
+      <p>
+        These guidelines are not absolute—sometimes clarity requires breaking them.  
+        Follow your organization’s style guide when it differs. Pick your battles and adapt gracefully.  
+      </p>
+
+      <h3>Other Style Guides</h3>
+      <p>Many organizations publish excellent style guides. Some recommended ones include:</p>
+      <ul>
+        <li><a href="https://developers.google.com/style" target="_blank">Google Developer Documentation Style Guide</a></li>
+        <li><a href="https://learn.microsoft.com/style-guide/welcome/" target="_blank">Microsoft Writing Style Guide</a></li>
+        <li><a href="https://developer.gnome.org/documentation/" target="_blank">GNOME Documentation Style Guide</a></li>
+        <li><a href="https://styleguide.mailchimp.com/" target="_blank">Mailchimp Content Style Guide</a></li>
+        <li><a href="https://documentation.suse.com/styleguide/" target="_blank">SUSE Documentation Style Guide</a></li>
+      </ul>
     </section>
   </main>
 
