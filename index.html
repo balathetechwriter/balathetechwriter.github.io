@@ -1,324 +1,377 @@
 <!doctype html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Writing Samples</title>
-  <style>
-    :root{
-      --bg:#f9fafc;
-      --card:#ffffff;
-      --accent:#004aad;
-      --muted:#555;
-      --radius:14px;
-      --transition-duration:0.5s;
-    }
-    body{margin:0;font-family:Segoe UI,Arial,sans-serif;background:var(--bg);color:#222;line-height:1.6;overflow-x:hidden}
-    header{padding:20px 30px;background:var(--accent);color:#fff;display:flex;align-items:center;justify-content:space-between;position:relative;z-index:10;box-shadow:0 2px 6px rgba(0,0,0,0.05)}
-    .logo{font-size:22px;font-weight:bold;color:#fff;letter-spacing:0.5px}
-    .tabs{display:flex;gap:20px;position:relative}
-    .tabs button{background:none;border:none;font-size:15px;font-weight:600;color:rgba(255,255,255,0.8);cursor:pointer;padding:8px 14px;position:relative;transition:color var(--transition-duration)}
-    .tabs button.active{color:#fff}
-    .tab-underline{position:absolute;bottom:0;height:3px;background:#fff;transition:all var(--transition-duration);border-radius:2px}
-
-    .content{max-width:1000px;margin:40px auto;padding:0 20px;position:relative;z-index:5}
-    .card{background:var(--card);border-radius:var(--radius);padding:26px;border:1px solid #e0e0e0;box-shadow:0 4px 12px rgba(0,0,0,0.08);opacity:0;transform:translateY(20px);transition:all var(--transition-duration)}
-    .card.show{opacity:1;transform:translateY(0)}
-    h2{margin-top:0;color:var(--accent);font-size:1.6rem;letter-spacing:0.5px}
-    h3{color:#333;margin-top:20px}
-    .muted{color:var(--muted);font-size:14px;margin-bottom:12px;font-style:italic}
-
-    ol.procedure-list{padding-left:20px}
-    ol.procedure-list li{margin-bottom:10px;opacity:0;transform:translateY(10px);transition:all 0.4s ease}
-    ol.procedure-list li.show{opacity:1;transform:translateY(0)}
-
-    table{width:100%;border-collapse:collapse;margin-top:12px;font-size:15px}
-    table th, table td{border:1px solid #ddd;padding:10px;text-align:left;vertical-align:top}
-    table th{background:#f4f7fb;color:#222}
-    table tr{opacity:0;transform:translateY(10px);transition:all 0.4s ease}
-    table tr.show{opacity:1;transform:translateY(0)}
-
-    footer{text-align:center;padding:16px;border-top:1px solid #eee;color:var(--muted);font-size:13px;margin-top:40px;position:relative;z-index:10}
-  .styled-image {
-    width: 4in;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
-    margin-top: 10px;
-    margin-bottom: 10px;
-  }
-</style>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Balachandar S. — Technical Writer Portfolio</title>
+  <meta name="description" content="Portfolio of Balachandar S., a technical writer who plans, writes, and reviews end-user guides, release notes, style guides, and support articles.">
+  <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+  <link rel="apple-touch-icon" href="apple-touch-icon.png">
+  <link rel="stylesheet" href="css/site.css">
 </head>
 <body>
-  <header>
-    <div class="logo">Writing Samples</div>
-    <nav class="tabs">
-      <button class="tab-btn active" data-tab="procedure">Procedure</button>
-      <button class="tab-btn" data-tab="releasenotes">Release Notes</button>
-      <button class="tab-btn" data-tab="styleguide">Style Guide</button>
-      <div class="tab-underline"></div>
-    </nav>
+
+  <!-- ======================= Header ======================= -->
+  <header class="site-header">
+    <div class="wrap site-header__inner">
+      <a class="brand" href="index.html">
+        <span class="brand__mark">BS</span>
+        <span>
+          <span class="brand__name">Balachandar S.</span>
+          <span class="brand__role">Technical Writer</span>
+        </span>
+      </a>
+      <button class="nav__toggle" aria-label="Toggle menu" aria-expanded="false">☰</button>
+      <nav class="nav" id="site-nav">
+        <a href="#about">About</a>
+        <a href="#expertise">Expertise</a>
+        <a href="#samples">Samples</a>
+        <a href="#approach">Approach</a>
+        <a href="#contact">Contact</a>
+        <a class="nav__cta" href="#samples">View samples</a>
+      </nav>
+    </div>
   </header>
 
-  <main class="content">
-    <section id="procedure" class="tab-content card show">
-      <h2>Adding Personal Information to Your Edge Profile</h2>
-      <div class="path">
-    <strong>Path:</strong> <em>Settings window &gt; Passwords and autofill</em>
-  </div>
-<p>This section explains how users can add personal information such as name, address, phone number, and email to their Edge profile.</p>
-      <p><strong>To add personal information:</strong></p>
- <ol>
-  <li>
-    From the <em>Passwords and autofill</em> window, in the <em>Personal Info</em> section, click the <em>Add Personal Info</em> button.<br>
-    The <em>Add Personal Info</em> pop-up window opens:
-  </li>
-   <img src="https://balathetechwriter.github.io/images/portfolio/Screenshot%202025-10-13%20235827.png" 
-     alt="Portfolio Screenshot" 
-     class="styled-image">
-  <li>
-    From the <em>Country/region</em> drop-down list, select a country or region.
-  </li>
-  <li>
-    In the <em>Name</em> field, enter your full name.
-  </li>
-  <li>
-    In the <em>Organization</em> field, enter your organization name.
-  </li>
-  <li>
-    In the <em>Street address</em> field, enter your street address.
-  </li>
-  <li>
-    In the <em>City</em> field, enter your city.
-  </li>
-  <li>
-    In the <em>PIN code</em> field, enter your postal code.
-  </li>
-  <li>
-    In the <em>State</em> field, enter your state or province.
-  </li>
-  <li>
-    In the <em>Phone</em> field, enter your contact number.
-  </li>
-  <li>
-    In the <em>Email</em> field, enter your email address.
-  </li>
-  <li>
-    Click the <em>Add</em> button.<br>
-    The personal information is saved.
-  </li>
-</ol>
+  <!-- ======================= Hero ======================= -->
+  <section class="hero">
+    <div class="wrap hero__inner">
+      <div>
+        <span class="eyebrow">Technical writing portfolio</span>
+        <h1>Good software deserves<br>documentation people <span class="name-accent">actually read.</span></h1>
+        <p class="hero__lead">
+          I'm <strong>Balachandar S.</strong>, a technical writer who turns complex products into
+          clear, task-focused documentation — user guides, release notes, style guides, and
+          support articles that help people get things done without calling support.
+        </p>
+        <div class="hero__actions">
+          <a class="btn btn--primary" href="#samples">Browse writing samples <span class="arrow">→</span></a>
+          <a class="btn btn--ghost" href="https://github.com/balathetechwriter" target="_blank" rel="noopener">GitHub profile ↗</a>
+        </div>
+      </div>
+      <div class="hero__visual" aria-hidden="true">
+        <div class="mockdoc">
+          <div class="mockdoc__bar">
+            <span class="mockdoc__dot"></span><span class="mockdoc__dot"></span><span class="mockdoc__dot"></span>
+            <span class="mockdoc__title">manage-personal-info.html</span>
+          </div>
+          <div class="mockdoc__body">
+            <h4>To add personal information to your profile</h4>
+            <ol>
+              <li>Go to <em>Passwords and autofill</em> &gt; <em>Personal Info</em>.</li>
+              <li>Click <em>Add Personal Info</em>.</li>
+              <li>Enter the details, then click <em>Add</em>.</li>
+            </ol>
+            <div class="mock-line" style="width:70%"></div>
+            <div class="mock-line" style="width:45%"></div>
+            <div class="mockdoc__foot">
+              <span class="chip">User guide</span>
+              <span class="chip chip--amber">Screenshot-driven</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
 
-    </section>
+  <!-- ======================= About ======================= -->
+  <section class="section" id="about">
+    <div class="wrap">
+      <div class="section__head">
+        <p class="section__kicker">About</p>
+        <h2 class="section__title">A writer who starts from the user's question</h2>
+        <p class="section__lede">Everything I write is tested against one yardstick: <em>can a reader follow this and finish the task without guessing?</em></p>
+      </div>
+      <div class="about-grid">
+        <div class="about-copy">
+          <!-- TIP: Expand this with resume details — years of experience, employers,
+               industries documented, education/certifications. -->
+          <p>
+            I am a technical writer who specializes in <strong>software documentation for everyday users</strong>.
+            My work centers on the documents that shape a product's first impression: getting-started
+            material, in-product help, release notes, and the style rules that keep a documentation
+            set consistent as it grows.
+          </p>
+          <p>
+            My samples on this site are written for products and workflows I know well — including
+            browser-based software such as <strong>Microsoft Edge</strong> — because I believe portfolio
+            writing should demonstrate the same research and empathy I bring to client work: knowing who
+            the reader is, what they are trying to do, and where they are most likely to get stuck.
+          </p>
+          <p>
+            I write with a defined voice and a style baseline, illustrate procedures with screenshots,
+            and verify instructions by walking through them step by step.
+          </p>
+          <ul class="focus-list">
+            <li><span class="tick">✓</span> End-user procedures that match the real product flow — UI names, screenshots, and states included</li>
+            <li><span class="tick">✓</span> Release notes that tell readers <em>what changed and why it matters</em></li>
+            <li><span class="tick">✓</span> Style guides that keep a growing docs team consistent</li>
+            <li><span class="tick">✓</span> Plain, respectful language — no jargon, no filler, no "simply"</li>
+          </ul>
+        </div>
+        <aside class="fact-card">
+          <h3>Balachandar S.</h3>
+          <p class="sub">Technical Writer · balathetechwriter</p>
+          <ul class="fact-list">
+            <li><strong>Specialty:</strong> end-user &amp; product documentation</li>
+            <li><strong>Document types:</strong> user guides, release notes, style guides, troubleshooting articles</li>
+            <li><strong>Domain focus:</strong> desktop &amp; web application software</li>
+            <li><strong>Style baselines:</strong> Microsoft Writing Style Guide, Google developer style, plain-language principles</li>
+            <li><strong>Location:</strong> Bengaluru, India · open to remote worldwide
+                <!-- EDIT: adjust to your real city/country and timezone if different. --></li>
+            <li><strong>Status:</strong> open to technical writing opportunities
+                <!-- EDIT: e.g. your current role/employer or "available immediately". --></li>
+          </ul>
+          <a class="btn btn--primary" style="padding:9px 18px;font-size:14.5px" href="#contact">Get in touch</a>
+        </aside>
+      </div>
+    </div>
+  </section>
 
-    <section id="releasenotes" class="tab-content card" style="display:none">
-  <h2>Release Notes</h2>
-  <div class="muted">Version history with detailed updates</div>
-  <table>
-    <tr>
-      <th>Version</th>
-      <th>Date</th>
-      <th>Changes</th>
-    </tr>
-    <tr>
-      <td>2.2.0</td>
-      <td>2025-10-10</td>
-      <td>
-        <ul>
-          <li><strong>New Feature:</strong> Real-time collaboration for shared tasks has been introduced. This allows multiple users to simultaneously view, edit, and comment on tasks within a shared workspace. Changes are synced instantly, and presence indicators show who is active, improving team productivity and transparency.</li>
-          <li><strong>Enhanced Feature:</strong> The search functionality has been significantly upgraded. Users can now apply advanced filters, view highlighted keywords in results, and save custom search presets for repeated use. These improvements make it easier to locate specific tasks, documents, or users quickly and accurately.</li>
-          <li><strong>Bug Fixes:</strong> A critical issue affecting push notifications on iOS devices has been resolved. Previously, users experienced missed alerts due to background refresh limitations. Notifications are now reliably delivered across all supported platforms, ensuring timely updates and reminders.</li>
-        </ul>
-      </td>
-    </tr>
-    <tr>
-      <td>2.1.0</td>
-      <td>2025-09-15</td>
-      <td>
-        <ul>
-          <li><strong>New Feature:</strong> Users can now upload files directly during task creation. This enables better context sharing by attaching relevant documents, images, or reference materials to tasks, streamlining collaboration and reducing the need for external file sharing.</li>
-          <li><strong>Enhanced Feature:</strong> Multi-factor authentication (MFA) has been added to the sign-in process. This provides an extra layer of security by requiring users to verify their identity through a secondary method, such as a mobile app or SMS code, protecting accounts from unauthorized access.</li>
-          <li><strong>Bug Fixes:</strong> Dashboard performance has been optimized to reduce refresh latency. Users will notice faster load times and smoother transitions when navigating between widgets and data views, especially on lower-bandwidth connections.</li>
-        </ul>
-      </td>
-    </tr>
-    <tr>
-      <td>2.0.0</td>
-      <td>2025-08-01</td>
-      <td>
-        <ul>
-          <li><strong>New Feature:</strong> A complete redesign of the user interface was launched, focusing on clarity, accessibility, and modern aesthetics. The new layout improves visual hierarchy, simplifies navigation, and adheres to accessibility standards for users with visual or motor impairments.</li>
-          <li><strong>Enhanced Feature:</strong> The navigation menu has been streamlined to reduce clutter and improve usability. Frequently accessed modules are now grouped logically, and collapsible sections allow users to customize their workspace for faster access to essential tools.</li>
-          <li><strong>Bug Fixes:</strong> Login errors affecting mobile users on both Android and iOS platforms have been resolved. The authentication flow has been stabilized, and error handling improved to ensure a seamless sign-in experience across devices.</li>
-        </ul>
-      </td>
-    </tr>
-  </table>
-</section>
+  <!-- ======================= Expertise ======================= -->
+  <section class="section section--soft" id="expertise">
+    <div class="wrap">
+      <div class="section__head">
+        <p class="section__kicker">What I do</p>
+        <h2 class="section__title">Documentation skills across the full product cycle</h2>
+      </div>
+      <div class="card-grid">
+        <div class="card">
+          <div class="card__icon">📘</div>
+          <h3>User guides &amp; procedures</h3>
+          <p>Task-oriented instructions built around what the reader wants to do. Every step is written in the imperative, verified against the interface, and supported with annotated screenshots.</p>
+        </div>
+        <div class="card">
+          <div class="card__icon">📣</div>
+          <h3>Release notes</h3>
+          <p>Release notes that organize change by reader impact — new features, improvements, bug fixes — written in plain language with version numbers, dates, and scoped sections for easy scanning.</p>
+        </div>
+        <div class="card">
+          <div class="card__icon">📐</div>
+          <h3>Style guides</h3>
+          <p>Pragmatic editorial standards — voice, tone, terminology, formatting conventions — that keep one writer or a whole team producing consistent, on-brand documentation.</p>
+        </div>
+        <div class="card">
+          <div class="card__icon">🛟</div>
+          <h3>Troubleshooting &amp; FAQs</h3>
+          <p>Support content organized by symptom: likely causes, tested fixes, and the exact error messages and states a reader will see — so help arrives before the support ticket does.</p>
+        </div>
+        <div class="card">
+          <div class="card__icon">🖼️</div>
+          <h3>Screenshots &amp; visual docs</h3>
+          <p>Clear, current captures that sit beside the steps they illustrate — cropped, annotated, and captioned so images explain rather than decorate.</p>
+        </div>
+        <div class="card">
+          <div class="card__icon">🔍</div>
+          <h3>Editing &amp; information architecture</h3>
+          <p>Reviews for accuracy, consistency, and readability — plus the heading structures, cross-links, and page-level planning that make documentation findable and navigable.</p>
+        </div>
+      </div>
 
-    <section id="styleguide" class="tab-content card" style="display:none">
-      <h2>Style Guide</h2>
-      <div class="muted">Guidelines for accurate, consistent, and user-focused documentation</div>
+      <div class="section__head" style="margin-top:56px;margin-bottom:20px">
+        <h2 class="section__title" style="font-size:22px">Toolbox</h2>
+      </div>
+      <div class="chip-row">
+        <span class="tool-chip"><b>Git &amp; GitHub</b> — version control for docs</span>
+        <span class="tool-chip"><b>GitHub Pages</b> — publishing this portfolio</span>
+        <span class="tool-chip"><b>HTML &amp; CSS</b> — hand-coded docs</span>
+        <span class="tool-chip"><b>Markdown</b></span>
+        <span class="tool-chip"><b>Visual Studio Code</b></span>
+        <span class="tool-chip"><b>Screenshot capture</b></span>
+        <span class="tool-chip"><b>Microsoft Word / Google Docs</b></span>
+        <span class="tool-chip"><b>Microsoft Writing Style Guide</b></span>
+        <span class="tool-chip"><b>Google developer style</b></span>
+        <span class="tool-chip"><b>Plain-language editing</b></span>
+      </div>
+      <!-- TIP: Extend the toolbox from your resume — e.g. MadCap Flare, Adobe FrameMaker,
+           Oxygen XML, Confluence/Jira, Zendesk, Figma, DITA/XML, localization workflows. -->
+    </div>
+  </section>
 
-      <p>
-        Acceptable technical writing should be accurate, with a professional level of spelling, grammar, and punctuation.  
-        Good technical writing requires more than that.  
+  <!-- ======================= Samples ======================= -->
+  <section class="section" id="samples">
+    <div class="wrap">
+      <div class="section__head">
+        <p class="section__kicker">Writing samples</p>
+        <h2 class="section__title">Four document types, one standard: clarity</h2>
+        <p class="section__lede">
+          Each sample below is a complete, self-contained document — formatted the way it would ship,
+          not a fragment. Follow the <em>Open sample</em> link to read it in full.
+        </p>
+      </div>
+
+      <div class="sample-list">
+
+        <article class="sample-card">
+          <div class="sample-card__meta">
+            <span class="chip">User guide</span>
+            <span class="chip chip--amber">With screenshots</span>
+          </div>
+          <h3>Adding personal information to your Microsoft Edge profile</h3>
+          <p class="sample-card__desc">A task-based, step-by-step guide for end users of a real desktop application workflow.</p>
+          <div class="sample-card__excerpt">
+            <span class="docs">From the sample —</span>
+            “From the <em>Passwords and autofill</em> window, in the <em>Personal Info</em> section, click the
+            <em>Add Personal Info</em> button. The <em>Add Personal Info</em> pop-up window opens.”
+          </div>
+          <div class="sample-card__foot">
+            <span class="note">Procedure · field reference · related tasks</span>
+            <a class="text-link" href="samples/user-guide.html">Open sample <span class="arrow">→</span></a>
+          </div>
+        </article>
+
+        <article class="sample-card">
+          <div class="sample-card__meta">
+            <span class="chip">Release notes</span>
+            <span class="chip chip--ok">Versioned</span>
+          </div>
+          <h3>Release notes — v2.2.0, v2.1.0, v2.0.0</h3>
+          <p class="sample-card__desc">A versioned release-notes page that groups changes by reader impact and explains the benefit behind each update.</p>
+          <div class="sample-card__excerpt">
+            <span class="docs">From the sample —</span>
+            “<strong>New feature:</strong> Real-time collaboration for shared tasks. Multiple users can now
+            simultaneously view, edit, and comment on tasks within a shared workspace.”
+          </div>
+          <div class="sample-card__foot">
+            <span class="note">What's new · improvements · bug fixes · previous releases</span>
+            <a class="text-link" href="samples/release-notes.html">Open sample <span class="arrow">→</span></a>
+          </div>
+        </article>
+
+        <article class="sample-card">
+          <div class="sample-card__meta">
+            <span class="chip">Style guide</span>
+            <span class="chip chip--amber">Editorial standard</span>
+          </div>
+          <h3>Technical writing style guide — quick reference</h3>
+          <p class="sample-card__desc">A personal style reference with concrete before/after examples — the principles I apply to every document I write.</p>
+          <div class="sample-card__excerpt">
+            <span class="docs">From the sample —</span>
+            “<strong>Correct:</strong> To postpone a delivery, call 1-800-123-4567.<br>
+            <strong>Incorrect:</strong> In order to postpone a delivery, you can call us at 1-800-123-4567.”
+          </div>
+          <div class="sample-card__foot">
+            <span class="note">Concise · clear · consistent · empathetic · complete</span>
+            <a class="text-link" href="samples/style-guide.html">Open sample <span class="arrow">→</span></a>
+          </div>
+        </article>
+
+        <article class="sample-card">
+          <div class="sample-card__meta">
+            <span class="chip">Support article</span>
+            <span class="chip chip--neutral">Symptom-based</span>
+          </div>
+          <h3>Troubleshooting autofill issues in Microsoft Edge</h3>
+          <p class="sample-card__desc">A symptom-driven support article: readers find their situation and follow tested fixes, one at a time.</p>
+          <div class="sample-card__excerpt">
+            <span class="docs">From the sample —</span>
+            “Edge does not offer to save the personal information you entered. <em>Possible cause:</em> the
+            'Save and fill personal info' setting is turned off.”
+          </div>
+          <div class="sample-card__foot">
+            <span class="note">5 scenarios · cause &amp; fix per scenario · escalation path</span>
+            <a class="text-link" href="samples/troubleshooting.html">Open sample <span class="arrow">→</span></a>
+          </div>
+        </article>
+
+      </div>
+
+      <p style="text-align:center;color:var(--muted);font-size:14.5px;margin:34px 0 0">
+        The source files for every sample live in the public repository —
+        <a href="https://github.com/balathetechwriter/balathetechwriter.github.io" target="_blank" rel="noopener">github.com/balathetechwriter/balathetechwriter.github.io</a>.
+        <!-- TIP: Swap this repo link for a resume PDF / LinkedIn once you have it published. -->
       </p>
+    </div>
+  </section>
 
-      <p>
-        I've collected the guidelines on this page over years of writing technical and instructional content.  
-        I consider every word I write carefully using these guidelines, striving to be:
-      </p>
+  <!-- ======================= Approach ======================= -->
+  <section class="section section--soft" id="approach">
+    <div class="wrap">
+      <div class="section__head">
+        <p class="section__kicker">How I work</p>
+        <h2 class="section__title">From “what does this button do?” to shipped docs</h2>
+      </div>
+      <div class="steps">
+        <div class="step">
+          <div class="step__num">1</div>
+          <h3>Clarify the task</h3>
+          <p>I start from the user's goal and work backwards — interviewing subject-matter experts and trying the product myself before writing a word.</p>
+        </div>
+        <div class="step">
+          <div class="step__num">2</div>
+          <h3>Write to a standard</h3>
+          <p>Imperative mood, active voice, consistent terminology, UI names formatted precisely. Every sentence earns its place.</p>
+        </div>
+        <div class="step">
+          <div class="step__num">3</div>
+          <h3>Show, don't just tell</h3>
+          <p>Screenshots are captured, cropped, and annotated to sit beside the step they support — never as decoration.</p>
+        </div>
+        <div class="step">
+          <div class="step__num">4</div>
+          <h3>Verify &amp; iterate</h3>
+          <p>Instructions are walked through on the real product, reviewed for accuracy, and revised when a reviewer or reader gets stuck.</p>
+        </div>
+      </div>
+    </div>
+  </section>
 
-      <ul>
-        <li><a href="#concise">Concise</a></li>
-        <li><a href="#consistent">Consistent</a></li>
-        <li><a href="#clear">Clear</a></li>
-        <li><a href="#complete">Complete</a></li>
-        <li><a href="#empathetic">Empathetic</a></li>
-        <li><a href="#enjoyable">Pleasant to read</a></li>
-        <li><a href="#adaptive">Adaptive</a></li>
-      </ul>
+  <!-- ======================= Contact ======================= -->
+  <section class="section" id="contact">
+    <div class="wrap contact-grid">
+      <div>
+        <div class="section__head" style="margin-bottom:18px">
+          <p class="section__kicker">Contact</p>
+          <h2 class="section__title">Have a documentation project in mind?</h2>
+        </div>
+        <p class="lede">
+          I'm always happy to talk about writing documentation — whether it's a full help center,
+          a single user guide, or bringing a messy release-notes process under control.
+        </p>
+        <div class="contact-actions">
+          <a class="btn btn--primary" href="https://github.com/balathetechwriter" target="_blank" rel="noopener">Message me on GitHub ↗</a>
+          <a class="btn btn--ghost" href="https://github.com/balathetechwriter/balathetechwriter.github.io" target="_blank" rel="noopener">Browse this site's source ↗</a>
+          <!-- TIP: Once you share your resume details, add real buttons here, for example:
+               <a class="btn btn--primary" href="mailto:you@example.com">Email me ✉</a>
+               <a class="btn btn--ghost" href="https://www.linkedin.com/in/your-profile">LinkedIn ↗</a> -->
+        </div>
+      </div>
+      <aside class="contact-side">
+        <h4>Find me online</h4>
+        <a href="https://github.com/balathetechwriter" target="_blank" rel="noopener">github.com/balathetechwriter</a>
+        <a href="https://balathetechwriter.github.io">balathetechwriter.github.io</a>
+        <a href="https://github.com/balathetechwriter/balathetechwriter.github.io" target="_blank" rel="noopener">Writing samples repository</a>
+        <span class="repo-chip">● Every sample ships with its source</span>
+        <!-- TIP: add email + LinkedIn here once you confirm the links, e.g.
+             <a href="mailto:you@example.com">you@example.com</a>
+             <a href="https://www.linkedin.com/in/your-profile">linkedin.com/in/your-profile</a> -->
+      </aside>
+    </div>
+  </section>
 
-      <h3 id="concise">Be Concise</h3>
-      <p>
-        For every word, ask “Is it needed?” Technical writing isn’t like writing a school paper with a minimum word count—you don’t need filler.  
-        However, don’t sacrifice clarity on the altar of brevity. Use all the words you need to prevent ambiguity or distortion of meaning.  
-      </p>
-      <p>
-        Watch out for the word <em>of</em> and phrases such as “in order to,” “you can,” and “there are.” You often don’t need them.  
-      </p>
-
-      <ul>
-        <li><strong>Correct:</strong> To postpone a delivery, call 1-800-123-4567.<br>
-            <strong>Incorrect:</strong> In order to postpone a delivery, you can call us at 1-800-123-4567.</li>
-        <li><strong>Correct:</strong> Several restrictions apply to trial accounts.<br>
-            <strong>Incorrect:</strong> There are several restrictions that apply to trial accounts.</li>
-        <li><strong>Correct:</strong> This lets you change the background color.<br>
-            <strong>Incorrect:</strong> This lets you change the color of the background.</li>
-      </ul>
-
-      <p>Leave marketing copy to the marketing team. Avoid superlatives, excessive claims, clichés, and future tense unless necessary.</p>
-      <ul>
-        <li><strong>Correct:</strong> This button returns you to your dashboard.<br>
-            <strong>Incorrect:</strong> This button will return you to your dashboard.</li>
-        <li><strong>Correct:</strong> Invalid input triggers an error message.<br>
-            <strong>Incorrect:</strong> An error message is triggered by invalid input.</li>
-      </ul>
-      <p>Prefer simple vocabulary. There’s no need to use <em>obfuscate</em> if <em>hide</em> will do.</p>
-
-      <h3 id="consistent">Be Consistent</h3>
-      <p>
-        Use a <a href="https://learn.microsoft.com/style-guide/welcome/" target="_blank">style guide</a> as your baseline standard.  
-        If you’re the only writer, a style guide ensures consistency for future contributors.
-      </p>
-      <p>
-        Avoid interchanging synonyms for technical terms. For example, don’t mix “directory” and “folder” unless they mean different things.  
-        Consistency also applies to spelling (pick either US or UK English, not both).
-      </p>
-
-      <h3 id="clear">Be Clear</h3>
-      <ul>
-        <li>Use a forward slash for folder paths.</li>
-        <li>Prefer “because” over “as” to indicate causation.</li>
-        <li>Use descriptive link text, not “click here.”</li>
-        <li>Ensure a logical information architecture with clear headings and navigation.</li>
-        <li>Avoid <em>e.g.</em> and <em>i.e.</em>; use “for example” or “that is.”</li>
-        <li>Place conditions at the start of sentences: <br>
-            <strong>Correct:</strong> To start over, delete this file. <br>
-            <strong>Incorrect:</strong> Delete this file to start over.</li>
-      </ul>
-
-      <h3 id="empathetic">Be Empathetic</h3>
-      <ul>
-        <li>Avoid “easily” and “simply”, they can feel patronizing if users struggle.</li>
-        <li>Define terms, acronyms, and abbreviations on first use.</li>
-        <li>Use inclusive language. Avoid biased or harmful terms such as <em>master/slave</em>, <em>whitelist/blacklist</em>, <em>dummy</em>, or <em>crazy</em>.</li>
-        <li>Provide diverse examples and avoid cultural assumptions.</li>
-        <li>Avoid colloquialisms, non-native speakers may not understand them.</li>
-      </ul>
-
-      <h3 id="enjoyable">Be Enjoyable to Read</h3>
-      <ul>
-        <li>Vary sentence lengths.</li>
-        <li>Keep sentences under ~30 words.</li>
-        <li>Break up long paragraphs to avoid “wall-of-text.”</li>
-      </ul>
-
-      <h3 id="complete">Be Complete</h3>
-      <ul>
-        <li>Cover all supported platforms (Android, iOS, Windows, etc.).</li>
-        <li>Have reviewers follow your instructions, not just read them.</li>
-        <li>Provide example inputs, outputs, and error handling steps.</li>
-      </ul>
-
-      <h3 id="adaptive">Be Adaptive</h3>
-      <p>
-        These guidelines are not absolute, sometimes clarity requires breaking them.  
-        Follow your organization’s style guide when it differs. Pick your battles and adapt gracefully.  
-      </p>
-
-      <h3>Other Style Guides</h3>
-      <p>Many organizations publish excellent style guides. Some recommended ones include:</p>
-      <ul>
-        <li><a href="https://developers.google.com/style" target="_blank">Google Developer Documentation Style Guide</a></li>
-        <li><a href="https://learn.microsoft.com/style-guide/welcome/" target="_blank">Microsoft Writing Style Guide</a></li>
-        <li><a href="https://developer.gnome.org/documentation/" target="_blank">GNOME Documentation Style Guide</a></li>
-        <li><a href="https://styleguide.mailchimp.com/" target="_blank">Mailchimp Content Style Guide</a></li>
-        <li><a href="https://documentation.suse.com/styleguide/" target="_blank">SUSE Documentation Style Guide</a></li>
-      </ul>
-    </section>
-  </main>
-
-  <footer>
-    © Writing Samples • User Guide, Release Notes, and Style Guide Example
+  <!-- ======================= Footer ======================= -->
+  <footer class="site-footer">
+    <div class="wrap site-footer__inner">
+      <span><span class="monogram-foot">Balachandar S.</span> · Technical Writer</span>
+      <span>© <span id="year">2026</span> · Portfolio hand-coded with HTML &amp; CSS</span>
+    </div>
   </footer>
 
   <script>
-    const buttons=document.querySelectorAll('.tab-btn');
-    const contents=document.querySelectorAll('.tab-content');
-    const underline=document.querySelector('.tab-underline');
-
-    function setUnderline(){
-      const activeBtn=document.querySelector('.tab-btn.active');
-      underline.style.width=activeBtn.offsetWidth+'px';
-      underline.style.left=activeBtn.offsetLeft+'px';
-    }
-    window.addEventListener('resize',setUnderline);
-
-    buttons.forEach(btn=>{
-      btn.addEventListener('click',()=>{
-        buttons.forEach(b=>b.classList.remove('active'));
-        btn.classList.add('active');
-        contents.forEach(c=>{
-          c.style.display=(c.id===btn.dataset.tab)?'block':'none';
-          if(c.id===btn.dataset.tab){
-            setTimeout(()=>c.classList.add('show'),50);
-            const lis=c.querySelectorAll('ol li');
-            lis.forEach((li,i)=>{setTimeout(()=>li.classList.add('show'),i*150)});
-            const rows=c.querySelectorAll('table tr');
-            rows.forEach((row,i)=>{setTimeout(()=>row.classList.add('show'),i*100)});
-          } else { 
-            c.classList.remove('show'); 
-            c.querySelectorAll('ol li, table tr').forEach(el=>el.classList.remove('show'));
-          }
-        });
-        setUnderline();
+    // Mobile nav toggle
+    var toggle = document.querySelector('.nav__toggle');
+    var nav = document.getElementById('site-nav');
+    if (toggle) {
+      toggle.addEventListener('click', function () {
+        var open = nav.classList.toggle('open');
+        toggle.setAttribute('aria-expanded', open ? 'true' : 'false');
       });
-    });
-
-    setUnderline();
-    document.querySelectorAll('#procedure ol li').forEach((li,i)=>setTimeout(()=>li.classList.add('show'),i*150));
+      nav.addEventListener('click', function (e) {
+        if (e.target.tagName === 'A') { nav.classList.remove('open'); }
+      });
+    }
+    document.getElementById('year').textContent = new Date().getFullYear();
   </script>
 </body>
 </html>
-
-
-
-
-
-
-
-
-
-
-
-

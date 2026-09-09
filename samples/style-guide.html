@@ -1,0 +1,186 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Sample: Technical writing style guide — Balachandar S.</title>
+  <meta name="description" content="Writing sample — a technical writing style guide quick reference with before/after examples.">
+  <link rel="icon" type="image/png" sizes="32x32" href="../favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="../favicon-16x16.png">
+  <link rel="stylesheet" href="../css/site.css">
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="wrap site-header__inner">
+      <a class="brand" href="../index.html">
+        <span class="brand__mark">BS</span>
+        <span><span class="brand__name">Balachandar S.</span><span class="brand__role">Technical Writer</span></span>
+      </a>
+      <nav class="nav">
+        <a href="../index.html">Portfolio</a>
+        <a href="../index.html#samples">Samples</a>
+        <a href="../index.html#contact">Contact</a>
+        <a class="nav__cta" href="../index.html#samples">All samples</a>
+      </nav>
+    </div>
+  </header>
+
+  <div class="doc-header">
+    <div class="doc-header__inner">
+      <p class="breadcrumb"><a href="../index.html">Portfolio</a> / <a href="../index.html#samples">Writing samples</a> / Style guide</p>
+      <div class="doc-meta">
+        <span class="chip">Style guide</span>
+        <span class="chip chip--amber">Editorial standard</span>
+        <span class="chip chip--neutral">Audience: documentation writers &amp; reviewers</span>
+      </div>
+      <h1>Technical writing style guide — quick reference</h1>
+      <p class="standfirst">
+        Acceptable technical writing is accurate, with a professional level of spelling, grammar,
+        and punctuation. Good technical writing requires more than that. These are the guidelines I
+        apply to every document I write — collected and refined over years of writing technical and
+        instructional content.
+      </p>
+    </div>
+  </div>
+
+  <div class="doc-body">
+
+    <p>I consider every word carefully against these principles, striving to be:</p>
+    <div class="chip-row" style="margin-bottom:10px">
+      <span class="tool-chip"><a href="#concise">Concise</a></span>
+      <span class="tool-chip"><a href="#consistent">Consistent</a></span>
+      <span class="tool-chip"><a href="#clear">Clear</a></span>
+      <span class="tool-chip"><a href="#complete">Complete</a></span>
+      <span class="tool-chip"><a href="#empathetic">Empathetic</a></span>
+      <span class="tool-chip"><a href="#enjoyable">Pleasant to read</a></span>
+      <span class="tool-chip"><a href="#adaptive">Adaptive</a></span>
+    </div>
+
+    <h2 id="concise">Be concise</h2>
+    <p>
+      For every word, ask: <em>is it needed?</em> Technical writing is not a school paper with a
+      minimum word count — you don't need filler. However, don't sacrifice clarity on the altar of
+      brevity. Use all the words you need to prevent ambiguity or distortion of meaning.
+    </p>
+    <p>
+      Watch out for the word <em>of</em>, and for phrases such as "in order to," "you can," and
+      "there are." You often don't need them.
+    </p>
+    <ul>
+      <li><strong>Correct:</strong> To postpone a delivery, call 1-800-123-4567.<br>
+          <strong>Incorrect:</strong> In order to postpone a delivery, you can call us at 1-800-123-4567.</li>
+      <li><strong>Correct:</strong> Several restrictions apply to trial accounts.<br>
+          <strong>Incorrect:</strong> There are several restrictions that apply to trial accounts.</li>
+      <li><strong>Correct:</strong> This lets you change the background color.<br>
+          <strong>Incorrect:</strong> This lets you change the color of the background.</li>
+    </ul>
+    <p>Leave marketing copy to the marketing team. Avoid superlatives, excessive claims, clichés,
+       and future tense unless necessary.</p>
+    <ul>
+      <li><strong>Correct:</strong> This button returns you to your dashboard.<br>
+          <strong>Incorrect:</strong> This button will return you to your dashboard.</li>
+      <li><strong>Correct:</strong> Invalid input triggers an error message.<br>
+          <strong>Incorrect:</strong> An error message is triggered by invalid input.</li>
+    </ul>
+    <p>Prefer simple vocabulary. There's no need to use <em>obfuscate</em> if <em>hide</em> will do.</p>
+
+    <h2 id="consistent">Be consistent</h2>
+    <p>
+      Use a style guide as your baseline standard. If you're the only writer, a style guide still
+      pays off — it ensures consistency for future contributors. Adopt an established guide where one
+      fits (see the links at the bottom of this page), and keep a short list of your own house rules
+      for decisions it doesn't cover.
+    </p>
+    <ul>
+      <li>Avoid interchanging synonyms for technical terms. Don't mix <em>directory</em> and
+          <em>folder</em> unless they mean different things.</li>
+      <li>Pick one spelling convention — US or UK English — and do not mix them.</li>
+      <li>Use one word for one UI control, and format it the same way everywhere (for example,
+          always bold the names of buttons).</li>
+      <li>Capitalize headings and UI names by the same rule throughout the document set.</li>
+    </ul>
+
+    <h2 id="clear">Be clear</h2>
+    <ul>
+      <li>Use a forward slash for folder paths.</li>
+      <li>Prefer "because" over "as" to indicate causation.</li>
+      <li>Use descriptive link text, not "click here."</li>
+      <li>Ensure a logical information architecture with clear headings and navigation.</li>
+      <li>Avoid <em>e.g.</em> and <em>i.e.</em>; use "for example" or "that is."</li>
+      <li>Place conditions at the start of a sentence:<br>
+          <strong>Correct:</strong> To start over, delete this file.<br>
+          <strong>Incorrect:</strong> Delete this file to start over.</li>
+      <li>Keep related information together. Describe a control beside the step that uses it, not
+          in a paragraph two pages earlier.</li>
+    </ul>
+
+    <h2 id="complete">Be complete</h2>
+    <ul>
+      <li>Cover all supported platforms (Android, iOS, Windows, and so on) — or state clearly when a
+          task applies to only one of them.</li>
+      <li>Have reviewers follow your instructions, not just read them.</li>
+      <li>Provide example inputs and outputs, and describe expected error handling.</li>
+      <li>Answer the questions readers will have after finishing the task: what happens next, and
+          where do I go if it didn't work?</li>
+    </ul>
+
+    <h2 id="empathetic">Be empathetic</h2>
+    <ul>
+      <li>Avoid "easily" and "simply." They can feel patronizing if users struggle.</li>
+      <li>Define terms, acronyms, and abbreviations on first use.</li>
+      <li>Use inclusive language. Avoid biased or harmful terms such as <em>master/slave</em>,
+          <em>whitelist/blacklist</em>, <em>dummy</em>, or <em>crazy</em>.</li>
+      <li>Provide diverse examples and avoid cultural assumptions.</li>
+      <li>Avoid colloquialisms — non-native speakers may not understand them.</li>
+      <li>Explain the <em>why</em> behind a step when a reader might hesitate to do it.</li>
+    </ul>
+
+    <h2 id="enjoyable">Be pleasant to read</h2>
+    <ul>
+      <li>Vary sentence lengths.</li>
+      <li>Keep sentences under roughly 30 words.</li>
+      <li>Break up long paragraphs to avoid a "wall of text."</li>
+      <li>Prefer lists for anything with more than two items — but keep list items parallel and
+          roughly the same length.</li>
+    </ul>
+
+    <h2 id="adaptive">Be adaptive</h2>
+    <p>
+      These guidelines are not absolute — sometimes clarity requires breaking them. Follow your
+      organization's style guide when it differs. Pick your battles, and adapt gracefully.
+    </p>
+
+    <h2>Other style guides I recommend</h2>
+    <p>Many organizations publish excellent style guides. The ones I return to most often:</p>
+    <ul>
+      <li><a href="https://developers.google.com/style" target="_blank" rel="noopener">Google Developer Documentation Style Guide</a></li>
+      <li><a href="https://learn.microsoft.com/style-guide/welcome/" target="_blank" rel="noopener">Microsoft Writing Style Guide</a></li>
+      <li><a href="https://developer.gnome.org/documentation/" target="_blank" rel="noopener">GNOME Documentation Style Guide</a></li>
+      <li><a href="https://styleguide.mailchimp.com/" target="_blank" rel="noopener">Mailchimp Content Style Guide</a></li>
+      <li><a href="https://documentation.suse.com/styleguide/" target="_blank" rel="noopener">SUSE Documentation Style Guide</a></li>
+    </ul>
+
+    <div class="doc-nav">
+      <a href="release-notes.html"><small>Previous sample</small><strong>← Release notes</strong></a>
+      <a class="next" href="troubleshooting.html"><small>Next sample</small><strong>Troubleshooting article →</strong></a>
+    </div>
+
+    <div class="sample-meta-strip">
+      <b>About this sample</b><br>
+      Demonstrates my editorial standards with concrete before/after examples. This is the kind of
+      living reference I maintain for myself and for the teams I write with, so voice, tone, and
+      terminology stay consistent as a documentation set grows.
+    </div>
+
+  </div>
+
+  <footer class="site-footer">
+    <div class="wrap site-footer__inner">
+      <span><span class="monogram-foot">Balachandar S.</span> · Technical Writer</span>
+      <span><a href="../index.html">Portfolio</a> · <a href="../index.html#samples">Samples</a> · Sample document — for portfolio demonstration</span>
+    </div>
+  </footer>
+
+</body>
+</html>

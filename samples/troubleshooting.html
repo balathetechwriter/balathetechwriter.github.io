@@ -1,0 +1,194 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Sample: Troubleshooting autofill issues in Microsoft Edge — Balachandar S.</title>
+  <meta name="description" content="Writing sample — a symptom-based support article for autofill problems in Microsoft Edge.">
+  <link rel="icon" type="image/png" sizes="32x32" href="../favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="../favicon-16x16.png">
+  <link rel="stylesheet" href="../css/site.css">
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="wrap site-header__inner">
+      <a class="brand" href="../index.html">
+        <span class="brand__mark">BS</span>
+        <span><span class="brand__name">Balachandar S.</span><span class="brand__role">Technical Writer</span></span>
+      </a>
+      <nav class="nav">
+        <a href="../index.html">Portfolio</a>
+        <a href="../index.html#samples">Samples</a>
+        <a href="../index.html#contact">Contact</a>
+        <a class="nav__cta" href="../index.html#samples">All samples</a>
+      </nav>
+    </div>
+  </header>
+
+  <div class="doc-header">
+    <div class="doc-header__inner">
+      <p class="breadcrumb"><a href="../index.html">Portfolio</a> / <a href="../index.html#samples">Writing samples</a> / Support article</p>
+      <div class="doc-meta">
+        <span class="chip">Support article</span>
+        <span class="chip chip--neutral">Symptom-based troubleshooting</span>
+        <span class="chip chip--neutral">Product: Microsoft Edge (desktop)</span>
+      </div>
+      <h1>Troubleshooting autofill issues in Microsoft Edge</h1>
+      <p class="standfirst">
+        Edge is not offering to fill in your saved personal information, or it is filling in the
+        wrong details. Find the symptom below that matches what you see, and follow the fix in order.
+      </p>
+    </div>
+  </div>
+
+  <div class="doc-body">
+
+    <p><strong>Not sure which section applies to you?</strong> Start with
+       <a href="#s1">Section 1 — Edge does not offer to save personal information</a>, the most
+       common cause, then continue down the list.</p>
+
+    <div class="callout callout--note">
+      <b>Before you begin</b>
+      <p>Restart Edge once. Several autofill issues clear on their own after a restart or after the
+      browser updates.</p>
+    </div>
+
+    <div id="s1" class="trouble-card">
+      <details open>
+        <summary>1. Edge does not offer to save personal information</summary>
+        <div class="trouble-card__body">
+          <p class="symptom">You fill in a form, but the "Save personal info?" prompt never appears.</p>
+        
+          <p><strong>Possible cause:</strong> the <em>Save and fill personal info</em> setting is turned off.</p>
+          <p><strong>To resolve:</strong></p>
+          <ol>
+            <li>In Edge, go to <strong>Settings</strong> &gt; <strong>Passwords and autofill</strong>.</li>
+            <li>Turn on <strong>Save and fill personal info</strong>.</li>
+            <li>Return to the form and submit it again. Edge now offers to save the details.</li>
+          </ol>
+          <p>If the setting is already on, check whether the website marks the field as sensitive
+             (for example, a credit-card-like field). Some sites deliberately disable autofill, and
+             Edge respects that choice.</p>
+        </div>
+      </details>
+    </div>
+
+    <div id="s2" class="trouble-card">
+      <details>
+        <summary>2. Saved information does not fill in a form</summary>
+        <div class="trouble-card__body">
+          <p class="symptom">Your saved address or phone number is stored, but the form stays empty when you click a field.</p>
+        
+          <p><strong>Possible cause:</strong> the website's form does not label its fields in a way Edge recognizes, or you clicked a field Edge does not associate with your saved entry.</p>
+          <p><strong>To resolve:</strong></p>
+          <ol>
+            <li>Click the empty field, and then look for the autofill suggestion drop-down at the bottom of the field.</li>
+            <li>If a suggestion appears, click your saved entry to fill the form.</li>
+            <li>If no suggestion appears, enter the details manually. Edge will not reliably autofill
+                this particular site; this is usually a limitation of how the site built its form, not
+                a problem with your saved information.</li>
+          </ol>
+        </div>
+      </details>
+    </div>
+
+    <div id="s3" class="trouble-card">
+      <details>
+        <summary>3. Edge fills in outdated or incorrect details</summary>
+        <div class="trouble-card__body">
+          <p class="symptom">The form fills with an old address, an old phone number, or an entry you deleted.</p>
+        
+          <p><strong>Possible cause:</strong> multiple saved entries exist, or the entry was edited on
+          another device and has not finished syncing.</p>
+          <p><strong>To resolve:</strong></p>
+          <ol>
+            <li>Go to <strong>Settings</strong> &gt; <strong>Passwords and autofill</strong> &gt; <strong>Personal Info</strong>.</li>
+            <li>Review the list and remove duplicate or outdated entries.</li>
+            <li>Confirm the entry you want to use is the only one for that address.</li>
+            <li>If you use multiple devices, sign in to the same profile and wait a minute for sync
+                to complete, then try the form again.</li>
+          </ol>
+        </div>
+      </details>
+    </div>
+
+    <div id="s4" class="trouble-card">
+      <details>
+        <summary>4. The Add Personal Info button is missing or unavailable</summary>
+        <div class="trouble-card__body">
+          <p class="symptom">In <em>Settings &gt; Passwords and autofill &gt; Personal Info</em>, the
+        <em>Add Personal Info</em> button is grayed out or absent.</p>
+        
+          <p><strong>Possible cause:</strong> your organization manages Edge through policy, or your
+          profile is a child profile with parental controls.</p>
+          <p><strong>To resolve:</strong></p>
+          <ol>
+            <li>If Edge is managed by your work or school, contact your IT administrator. Saving
+                personal information can be disabled by policy, and the setting cannot be changed
+                from the browser.</li>
+            <li>If you use a child profile, ask the family organizer to allow autofill for the profile.</li>
+          </ol>
+        </div>
+      </details>
+    </div>
+
+    <div id="s5" class="trouble-card">
+      <details>
+        <summary>5. Personal information does not sync across your devices</summary>
+        <div class="trouble-card__body">
+          <p class="symptom">You saved an entry on your computer, but it is not available on your phone or tablet.</p>
+        
+          <p><strong>Possible cause:</strong> sync is turned off, or you are signed in to different profiles on each device.</p>
+          <p><strong>To resolve:</strong></p>
+          <ol>
+            <li>Confirm you are signed in to the same Microsoft profile on every device.</li>
+            <li>On each device, check <strong>Settings</strong> &gt; <strong>Profiles</strong> &gt;
+                <strong>Sync</strong>, and make sure sync is turned on for personal information.</li>
+            <li>Wait a few minutes, then check again. Large amounts of saved data can take time to sync.</li>
+          </ol>
+        </div>
+      </details>
+    </div>
+
+    <h2 style="border-top:0">Still stuck?</h2>
+    <p>
+      If none of the fixes above help, contact support and include the details below so the issue can
+      be investigated quickly:
+    </p>
+    <table class="doc dl-table">
+      <tbody>
+        <tr><td>Edge version</td><td>Settings &gt; About Microsoft Edge</td></tr>
+        <tr><td>Device &amp; OS</td><td>For example, "Windows 11 laptop"</td></tr>
+        <tr><td>Steps</td><td>Exactly what you did before the problem appeared</td></tr>
+        <tr><td>Screenshot</td><td>A capture of the form or error you see</td></tr>
+      </tbody>
+    </table>
+
+    <p><strong>Related:</strong> <a href="user-guide.html">Adding personal information to your
+       Microsoft Edge profile</a></p>
+
+    <div class="doc-nav">
+      <a href="style-guide.html"><small>Previous sample</small><strong>← Style guide</strong></a>
+      <a class="next" href="../index.html#samples"><small>Next sample</small><strong>All samples →</strong></a>
+    </div>
+
+    <div class="sample-meta-strip">
+      <b>About this sample</b><br>
+      Demonstrates symptom-based support writing: the reader lands on their symptom, reads one likely
+      cause at a time, and follows ordered fixes. Content is deliberately honest about limits
+      ("this is usually a limitation of how the site built its form") and ends with an escalation
+      path that collects the facts support actually needs.
+    </div>
+
+  </div>
+
+  <footer class="site-footer">
+    <div class="wrap site-footer__inner">
+      <span><span class="monogram-foot">Balachandar S.</span> · Technical Writer</span>
+      <span><a href="../index.html">Portfolio</a> · <a href="../index.html#samples">Samples</a> · Sample document — for portfolio demonstration</span>
+    </div>
+  </footer>
+
+</body>
+</html>
