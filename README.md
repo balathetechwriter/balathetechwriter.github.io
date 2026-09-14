@@ -10,19 +10,37 @@ Technical writer in Bengaluru with 5+ years of experience in structured authorin
 
 | File | Purpose |
 | --- | --- |
-| `index.html` | Portfolio homepage — hero, about, experience, expertise, sample cards, process, contact |
+| `index.html` | Portfolio homepage — hero, marquee, about, journey timeline, selected work, capabilities, process, contact |
 | `resume.html` | Full résumé as a web page — contact, objective, experience, skills, education |
 | `resume/Balachandar-Saravanan-Resume.pdf` | Downloadable two-page PDF résumé |
 | `samples/user-guide.html` | Sample user guide: adding personal information to a Microsoft Edge profile (procedure + screenshot + field reference) |
 | `samples/release-notes.html` | Sample release notes: versioned, grouped by reader impact |
 | `samples/style-guide.html` | Sample style guide: personal editorial quick reference with before/after examples |
 | `samples/troubleshooting.html` | Sample support article: symptom-based Edge autofill troubleshooting |
-| `css/site.css` | Hand-written stylesheet shared by all pages |
+| `css/site.css` | Hand-written stylesheet shared by all pages — dark editorial design system |
+| `js/site.js` | Shared vanilla-JS interactions (reveal on scroll, nav, counters, cursor) |
 | `images/portfolio/` | Screenshot used in the user-guide sample |
+| `images/work/` | Abstract cover art for the four sample cards on the homepage |
 | `sitemap.xml` | Sitemap — homepage, résumé, PDF, and the four samples |
 | `robots.txt` | Allows all crawlers and points at the sitemap |
 | `site.webmanifest` | Web app manifest (linked from `index.html`) |
 | `.github/workflows/static.yml` | GitHub Pages deployment workflow |
+
+## Design
+
+The site uses a dark, editorial layout inspired by contemporary studio portfolios:
+near-black canvas, a single lime accent, oversized display type set in Inter Tight,
+and JetBrains Mono for labels.
+
+- **Type** — Inter Tight (display), Inter (body), JetBrains Mono (labels), loaded from Google Fonts.
+- **Colour** — all tokens live in the `:root` block at the top of `css/site.css`.
+  Change `--accent` to re-skin the whole site.
+- **Motion** — reveal-on-scroll, a marquee, animated counters, a magnetic-feeling custom
+  cursor, and hover glow on cards. Everything is progressive enhancement: with JavaScript
+  disabled the page still renders completely, and every animation is disabled under
+  `prefers-reduced-motion: reduce`.
+- **Print** — résumé and sample pages have a print stylesheet that drops the dark
+  chrome and prints on white.
 
 ## Content
 

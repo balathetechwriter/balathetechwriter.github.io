@@ -11,7 +11,8 @@
   <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
   <link rel="apple-touch-icon" href="apple-touch-icon.png">
   <link rel="manifest" href="site.webmanifest">
-  <meta name="theme-color" content="#0f4c81">
+  <meta name="theme-color" content="#0a0a0b">
+  <meta name="color-scheme" content="dark">
 
   <!-- Open Graph / social preview -->
   <meta property="og:type" content="website">
@@ -22,9 +23,11 @@
   <meta property="og:image" content="https://balathetechwriter.github.io/android-chrome-512x512.png">
   <meta name="twitter:card" content="summary">
 
-  <!-- Structured data. Fields here are only the details already published on this
-       page; resume-specific fields (email, sameAs/LinkedIn, jobTitle, alumniOf,
-       knowsAbout) are marked below and must be filled from the real resume. -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter+Tight:ital,wght@0,200..700;1,200..700&family=Inter:wght@300..600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+  <!-- Structured data. -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -77,88 +80,156 @@
   <!-- A LinkedIn URL should be added to "sameAs" above; the resume supplied did
        not include one, so none was invented. -->
 
-
   <link rel="stylesheet" href="css/site.css">
 </head>
 <body>
 
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <div class="aurora" aria-hidden="true"><span></span><span></span><span></span></div>
+  <div class="grain" aria-hidden="true"></div>
+  <div class="scroll-progress" aria-hidden="true"></div>
+  <div class="cursor-ring" aria-hidden="true"></div>
+  <div class="cursor" aria-hidden="true"></div>
+
   <!-- ======================= Header ======================= -->
   <header class="site-header">
     <div class="wrap site-header__inner">
-      <a class="brand" href="index.html">
+      <a class="brand" href="index.html" data-cursor>
         <span class="brand__mark">BS</span>
         <span>
           <span class="brand__name">Balachandar S.</span>
           <span class="brand__role">Technical Writer</span>
         </span>
       </a>
-      <button class="nav__toggle" aria-label="Toggle menu" aria-expanded="false">☰</button>
-      <nav class="nav" id="site-nav">
-        <a href="#about">About</a>
-        <a href="#experience">Experience</a>
-        <a href="#expertise">Expertise</a>
-        <a href="#samples">Samples</a>
-        <a href="#approach">Approach</a>
-        <a href="#contact">Contact</a>
-        <a class="nav__cta" href="resume/Balachandar-Saravanan-Resume.pdf" download>Download résumé</a>
+
+      <nav class="nav" id="site-nav" aria-label="Primary">
+        <div class="nav__links">
+          <a href="#about">About</a>
+          <a href="#journey">Journey</a>
+          <a href="#work">Work</a>
+          <a href="#capabilities">Capabilities</a>
+          <a href="#process">Process</a>
+          <a href="#contact">Contact</a>
+        </div>
+        <a class="btn btn--primary btn--sm nav__cta" href="resume/Balachandar-Saravanan-Resume.pdf" download data-cursor>
+          Résumé <span class="arrow" aria-hidden="true">↓</span>
+        </a>
       </nav>
+
+      <button class="nav__toggle" aria-label="Toggle menu" aria-expanded="false" aria-controls="site-nav">
+        <span></span><span></span><span></span>
+      </button>
     </div>
   </header>
 
+  <main id="main">
+
   <!-- ======================= Hero ======================= -->
   <section class="hero">
+    <div class="hero__grid" aria-hidden="true"></div>
     <div class="wrap hero__inner">
-      <div>
-        <span class="eyebrow">Technical writing portfolio · 5+ years</span>
-        <h1>Good software deserves<br>documentation people <span class="name-accent">actually read.</span></h1>
-        <p class="hero__lead">
-          I'm <strong>Balachandar Saravanan</strong>, a technical writer with 5+ years turning
-          complex products into clear, task-focused documentation. I write release notes, user
-          manuals, and troubleshooting content in <strong>DITA and DocBook XML</strong> — currently
-          for healthcare software at <strong>eClinicalWorks</strong>, and previously for
-          <strong>GE Aviation and Boeing</strong> programmes.
-        </p>
-        <div class="hero__actions">
-          <a class="btn btn--primary" href="resume/Balachandar-Saravanan-Resume.pdf" download>Download résumé <span class="arrow">↓</span></a>
-          <a class="btn btn--ghost" href="#samples">Browse writing samples <span class="arrow">→</span></a>
-          <a class="btn btn--ghost" href="mailto:balachandarsaravanan32@gmail.com">Email me ✉</a>
+
+      <div class="hero__top" data-reveal>
+        <span class="availability"><span class="dot"></span> Open to opportunities · Bengaluru, IN</span>
+        <span class="mono-label mono-label--plain">Technical writing portfolio — 2026</span>
+      </div>
+
+      <h1 class="display hero__title">
+        <span class="row line-mask"><span>Documentation,</span></span>
+        <span class="row line-mask indent" style="--d:110ms"><span><em>Applied</em> <span class="thin">Precisely.</span></span></span>
+      </h1>
+
+      <div class="hero__bottom">
+        <div data-reveal style="--d:220ms">
+          <p class="lede">
+            I'm <strong>Balachandar Saravanan</strong> — a technical writer who turns complex
+            products into documentation people actually finish. Release notes, user manuals,
+            and structured <strong>DITA / DocBook XML</strong> content for healthcare software
+            at eClinicalWorks, and previously for GE&nbsp;Aviation and Boeing programmes.
+          </p>
+          <div class="hero__actions">
+            <a class="btn btn--primary" href="#work" data-cursor>View selected work <span class="arrow" aria-hidden="true">↗</span></a>
+            <a class="btn" href="resume/Balachandar-Saravanan-Resume.pdf" download data-cursor>Download résumé <span class="arrow" aria-hidden="true">↓</span></a>
+          </div>
+          <span class="scroll-cue" aria-hidden="true"><i></i> Scroll to explore</span>
+        </div>
+
+        <div class="hero__stats" data-reveal style="--d:320ms">
+          <div class="stat">
+            <div class="stat__num"><span data-count="5">0</span><sup>+</sup></div>
+            <div class="stat__label">Years writing docs</div>
+          </div>
+          <div class="stat">
+            <div class="stat__num"><span data-count="2">0</span></div>
+            <div class="stat__label">Regulated industries</div>
+          </div>
+          <div class="stat">
+            <div class="stat__num"><span data-count="4">0</span></div>
+            <div class="stat__label">Standards applied</div>
+          </div>
         </div>
       </div>
-      <div class="hero__visual" aria-hidden="true">
-        <div class="mockdoc">
-          <div class="mockdoc__bar">
-            <span class="mockdoc__dot"></span><span class="mockdoc__dot"></span><span class="mockdoc__dot"></span>
-            <span class="mockdoc__title">manage-personal-info.html</span>
-          </div>
-          <div class="mockdoc__body">
-            <h4>To add personal information to your profile</h4>
-            <ol>
-              <li>Go to <em>Passwords and autofill</em> &gt; <em>Personal Info</em>.</li>
-              <li>Click <em>Add Personal Info</em>.</li>
-              <li>Enter the details, then click <em>Add</em>.</li>
-            </ol>
-            <div class="mock-line" style="width:70%"></div>
-            <div class="mock-line" style="width:45%"></div>
-            <div class="mockdoc__foot">
-              <span class="chip">User guide</span>
-              <span class="chip chip--amber">Screenshot-driven</span>
-            </div>
-          </div>
-        </div>
-      </div>
+
     </div>
   </section>
+
+  <!-- ======================= Marquee ======================= -->
+  <div class="marquee" aria-hidden="true">
+    <div class="marquee__track">
+      <div class="marquee__group">
+        <span class="marquee__item">DITA</span>
+        <span class="marquee__item">DocBook XML</span>
+        <span class="marquee__item">Paligo CMS</span>
+        <span class="marquee__item">Release notes</span>
+        <span class="marquee__item">ASD-STE100</span>
+        <span class="marquee__item">S1000D</span>
+        <span class="marquee__item">Docs as Code</span>
+        <span class="marquee__item">FrameMaker</span>
+        <span class="marquee__item">Oxygen XML</span>
+        <span class="marquee__item">Structured authoring</span>
+      </div>
+      <div class="marquee__group">
+        <span class="marquee__item">DITA</span>
+        <span class="marquee__item">DocBook XML</span>
+        <span class="marquee__item">Paligo CMS</span>
+        <span class="marquee__item">Release notes</span>
+        <span class="marquee__item">ASD-STE100</span>
+        <span class="marquee__item">S1000D</span>
+        <span class="marquee__item">Docs as Code</span>
+        <span class="marquee__item">FrameMaker</span>
+        <span class="marquee__item">Oxygen XML</span>
+        <span class="marquee__item">Structured authoring</span>
+      </div>
+    </div>
+  </div>
 
   <!-- ======================= About ======================= -->
   <section class="section" id="about">
     <div class="wrap">
-      <div class="section__head">
-        <p class="section__kicker">About</p>
-        <h2 class="section__title">A writer who starts from the user's question</h2>
-        <p class="section__lede">Everything I write is tested against one yardstick: <em>can a reader follow this and finish the task without guessing?</em></p>
-      </div>
       <div class="about-grid">
-        <div class="about-copy">
+
+        <div class="about-sticky" data-reveal>
+          <p class="mono-label">About me</p>
+          <h2 class="h-xl section__title" style="margin-top:22px">
+            A writer who starts from the reader's question.
+          </h2>
+          <p class="lede" style="margin-bottom:28px">
+            Everything I write is tested against one yardstick — <em>can a reader follow this
+            and finish the task without guessing?</em>
+          </p>
+
+          <div class="portrait">
+            <div class="portrait__initials" aria-hidden="true">BS</div>
+            <div class="portrait__tag">
+              <span class="chip chip--accent">Bengaluru, IN</span>
+              <span class="chip">5+ years</span>
+              <span class="chip">Healthcare · Aviation</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="about-copy" data-reveal style="--d:120ms">
           <p>
             I am a technical writer with <strong>5+ years of experience</strong> across two very
             different documentation worlds: regulated <strong>aviation maintenance manuals</strong>
@@ -186,300 +257,503 @@
             structure, and care I bring to every document — who the reader is, what they are
             trying to do, and where they are most likely to get stuck.
           </p>
+
           <ul class="focus-list">
             <li><span class="tick">✓</span> Structured authoring in DITA and DocBook XML — modular, reusable, multi-channel</li>
             <li><span class="tick">✓</span> Release notes that tell readers <em>what changed and why it matters</em></li>
             <li><span class="tick">✓</span> Standards compliance — ASD-STE100, ATA 100, iSpec 2200, S1000D</li>
             <li><span class="tick">✓</span> CMS migrations, layout configuration, and onboarding other writers</li>
           </ul>
+
+          <div class="fact-card" style="margin-top:30px">
+            <h3>Balachandar Saravanan</h3>
+            <p class="sub">Technical Writer · balathetechwriter</p>
+            <ul class="fact-list">
+              <li><strong>Experience</strong> <span>5+ years (Jul 2021 – present)</span></li>
+              <li><strong>Current</strong> <span>Technical Writer, eClinicalWorks India</span></li>
+              <li><strong>Previously</strong> <span>TLE Technologies — GE Aviation &amp; Boeing programmes</span></li>
+              <li><strong>Documents</strong> <span>Release notes, user manuals, CMMs, FAQs, online help, service bulletins, troubleshooting articles</span></li>
+              <li><strong>Domains</strong> <span>Healthcare software · aviation maintenance</span></li>
+              <li><strong>Authoring</strong> <span>DITA, DocBook XML, Markdown</span></li>
+              <li><strong>Standards</strong> <span>ASD-STE100, ATA 100, iSpec 2200, S1000D</span></li>
+              <li><strong>Tools</strong> <span>Paligo, Adobe FrameMaker, Oxygen XML, Arbortext</span></li>
+              <li><strong>Education</strong> <span>B.E. Aeronautical Engineering, Jeppiaar Engineering College, Chennai</span></li>
+              <li><strong>Based in</strong> <span>Bengaluru, Karnataka, India</span></li>
+            </ul>
+            <div class="hero__actions">
+              <a class="btn btn--primary btn--sm" href="resume/Balachandar-Saravanan-Resume.pdf" download data-cursor>Download résumé</a>
+              <a class="btn btn--sm" href="#contact" data-cursor>Get in touch</a>
+            </div>
+          </div>
         </div>
-        <aside class="fact-card">
-          <h3>Balachandar Saravanan</h3>
-          <p class="sub">Technical Writer · balathetechwriter</p>
-          <ul class="fact-list">
-            <li><strong>Experience:</strong> 5+ years (Jul 2021 – present)</li>
-            <li><strong>Current role:</strong> Technical Writer, eClinicalWorks India</li>
-            <li><strong>Previously:</strong> TLE Technologies — GE Aviation &amp; Boeing programmes</li>
-            <li><strong>Document types:</strong> release notes, user manuals, CMMs, FAQs, online help, service bulletins, troubleshooting articles</li>
-            <li><strong>Domains:</strong> healthcare software · aviation maintenance</li>
-            <li><strong>Structured authoring:</strong> DITA, DocBook XML, Markdown</li>
-            <li><strong>Standards:</strong> ASD-STE100, ATA 100, iSpec 2200, S1000D</li>
-            <li><strong>Primary tools:</strong> Paligo, Adobe FrameMaker, Oxygen XML, Arbortext</li>
-            <li><strong>Education:</strong> B.E. Aeronautical Engineering, Jeppiaar Engineering College, Chennai</li>
-            <li><strong>Location:</strong> Bengaluru, Karnataka, India</li>
-            <li><strong>Status:</strong> open to technical writing opportunities</li>
-          </ul>
-          <a class="btn btn--primary" style="padding:9px 18px;font-size:14.5px" href="resume/Balachandar-Saravanan-Resume.pdf" download>Download résumé</a>
-          <a class="btn btn--ghost" style="padding:9px 18px;font-size:14.5px;margin-top:8px" href="#contact">Get in touch</a>
-        </aside>
+
       </div>
     </div>
   </section>
 
-  <!-- ======================= Experience ======================= -->
-  <section class="section" id="experience">
+  <!-- ======================= Journey / experience ======================= -->
+  <section class="section section--soft section--line" id="journey">
     <div class="wrap">
-      <div class="section__head">
-        <p class="section__kicker">Experience</p>
-        <h2 class="section__title">Five years across two regulated industries</h2>
-        <p class="section__lede">
+      <div class="section__head section__head--split" data-reveal>
+        <div>
+          <p class="mono-label">The journey</p>
+          <h2 class="h-xl section__title" style="margin-top:22px">Five years,<br>two regulated industries.</h2>
+        </div>
+        <p class="lede section__lede">
           Aviation maintenance manuals held to S1000D, then healthcare software documentation
           shipped on an SDLC cadence. Both rewarded the same discipline: verify first, write second.
         </p>
       </div>
 
-      <div class="card-grid card-grid--2">
-        <div class="card">
-          <div class="card__icon">🏥</div>
-          <h3>Technical Writer — eClinicalWorks India</h3>
-          <p class="card__when">Bengaluru · Aug 2023 – Present</p>
-          <ul>
-            <li>Author release notes for every product version — new features, bug fixes, and known issues — for internal teams and end users.</li>
-            <li>Structure and modularize content in <strong>DITA and DocBook XML</strong> for reuse, version control, and multi-channel publishing.</li>
-            <li>Create and maintain user manuals, FAQs, and troubleshooting documents supporting software and product releases.</li>
-            <li>Work inside the SDLC alongside cross-functional teams, SMEs, and QA to gather requirements and fold product changes into user documentation.</li>
-            <li>Design flowcharts, step-by-step guides, and visuals that simplify technical processes for end users.</li>
-          </ul>
-          <div class="callout callout--tip" style="margin:16px 0 0">
-            <b>Additional contributions</b>
-            <p>Led the migration from Adobe FrameMaker to <strong>Paligo</strong> (DocBook XML-based),
-            configuring layouts and migrating legacy content. Built out PDF and HTML5 layouts,
-            templates, variable sets, and reusable sections — then trained new writers on the platform.</p>
+      <div class="timeline">
+
+        <article class="tl-item" data-reveal>
+          <div class="tl-year">2016</div>
+          <div class="tl-body">
+            <h3>Aeronautical engineering, Chennai</h3>
+            <p>
+              Four years at Jeppiaar Engineering College learning to read a drawing before writing a
+              sentence. Engineering gave me the vocabulary; technical writing gave it a reader.
+            </p>
+            <div class="tl-tags">
+              <span class="chip">B.E. Aeronautical</span>
+              <span class="chip chip--neutral">2016 – 2020</span>
+            </div>
           </div>
-        </div>
+        </article>
 
-        <div class="card">
-          <div class="card__icon">✈️</div>
-          <h3>Technical Writer — TLE Technologies Pvt Ltd</h3>
-          <p class="card__when">Bengaluru · Jul 2021 – Aug 2023</p>
-          <ul>
-            <li>Wrote and revised user manuals, component maintenance manuals (CMMs), release notes, online help, and service bulletins for <strong>GE Aviation</strong> and <strong>Boeing</strong> projects.</li>
-            <li>Analyzed customer inputs — BOMs, engineering drawings, and test procedures — to document complex technical processes.</li>
-            <li>Documented all manuals in compliance with <strong>Simplified Technical English (ASD-STE100)</strong>.</li>
-            <li>Applied <strong>ATA 100, iSpec 2200, and S1000D</strong> while preparing technical manuals.</li>
-            <li>Worked in an Agile environment and took part in peer reviews to maintain quality and accuracy.</li>
-            <li>Planned and managed documentation tasks to achieve on-time delivery (OTD) and customer satisfaction.</li>
-          </ul>
-        </div>
+        <article class="tl-item" data-reveal>
+          <div class="tl-year">2021</div>
+          <div class="tl-body">
+            <h3>Technical Writer — TLE Technologies Pvt Ltd</h3>
+            <p>
+              Wrote and revised user manuals, component maintenance manuals (CMMs), release notes,
+              online help, and service bulletins for <strong>GE Aviation</strong> and
+              <strong>Boeing</strong> projects. Analysed BOMs, engineering drawings, and test
+              procedures to document complex processes — every manual written in compliance with
+              Simplified Technical English, and delivered on an Agile cadence with peer review.
+            </p>
+            <div class="tl-tags">
+              <span class="chip chip--accent">ASD-STE100</span>
+              <span class="chip">ATA 100</span>
+              <span class="chip">iSpec 2200</span>
+              <span class="chip">S1000D</span>
+              <span class="chip chip--neutral">Bengaluru · Jul 2021 – Aug 2023</span>
+            </div>
+          </div>
+        </article>
+
+        <article class="tl-item" data-reveal>
+          <div class="tl-year">2023</div>
+          <div class="tl-body">
+            <h3>Technical Writer — eClinicalWorks India</h3>
+            <p>
+              Author release notes for every product version — new features, bug fixes, and known
+              issues — for internal teams and end users. Structure and modularise content in
+              <strong>DITA and DocBook XML</strong> for reuse, version control, and multi-channel
+              publishing, and maintain the user manuals, FAQs, and troubleshooting documents that
+              ship alongside each release.
+            </p>
+            <div class="tl-tags">
+              <span class="chip chip--accent">DITA</span>
+              <span class="chip chip--accent">DocBook XML</span>
+              <span class="chip">SDLC</span>
+              <span class="chip">SME collaboration</span>
+              <span class="chip chip--neutral">Bengaluru · Aug 2023 – Present</span>
+            </div>
+          </div>
+        </article>
+
+        <article class="tl-item" data-reveal>
+          <div class="tl-year">2024</div>
+          <div class="tl-body">
+            <h3>Leading the FrameMaker → Paligo migration</h3>
+            <p>
+              Led the transition from Adobe FrameMaker to <strong>Paligo</strong> (DocBook
+              XML-based) end to end — configuring PDF and HTML5 layouts, templates, variable sets,
+              and reusable sections, then migrating legacy content into them. Trained the writers
+              who followed, which made onboarding a day instead of a fortnight.
+            </p>
+            <div class="tl-tags">
+              <span class="chip chip--accent">CMS migration</span>
+              <span class="chip">Layout configuration</span>
+              <span class="chip">Content reuse</span>
+              <span class="chip">Writer onboarding</span>
+            </div>
+          </div>
+        </article>
+
+        <article class="tl-item" data-reveal>
+          <div class="tl-year">2026</div>
+          <div class="tl-body">
+            <h3>Docs as Code, and what's next</h3>
+            <p>
+              A strong supporter of the <strong>Docs as Code</strong> approach — this portfolio is
+              hand-coded and published straight from a Git repository. I answer documentation and
+              tooling questions in community forums, and I'm working toward contributing to FOSS
+              documentation projects.
+            </p>
+            <div class="tl-tags">
+              <span class="chip chip--accent">Git &amp; GitHub</span>
+              <span class="chip">Markdown</span>
+              <span class="chip">Open source docs</span>
+            </div>
+          </div>
+        </article>
+
       </div>
 
-      <div class="card-grid card-grid--2" style="margin-top:20px">
-        <div class="card">
-          <div class="card__icon">🎓</div>
-          <h3>Education</h3>
-          <p class="card__when">2016 – 2020</p>
-          <p>
-            <strong>Bachelor's in Aeronautical Engineering</strong><br>
-            Jeppiaar Engineering College, Chennai
-          </p>
-        </div>
-        <div class="card">
-          <div class="card__icon">🌐</div>
-          <h3>Beyond the day job</h3>
-          <p class="card__when">Ongoing</p>
-          <p>
-            A strong supporter of the <strong>Docs as Code</strong> approach — this portfolio is
-            hand-coded and published straight from a Git repository. I answer documentation and
-            tooling questions in community forums, and I'm working toward contributing to FOSS
-            documentation projects.
-          </p>
-        </div>
-      </div>
-
-      <p style="text-align:center;margin:30px 0 0">
-        <a class="btn btn--ghost" href="resume.html">Read the full résumé <span class="arrow">→</span></a>
+      <p style="margin:38px 0 0" data-reveal>
+        <a class="btn" href="resume.html" data-cursor>Read the full résumé <span class="arrow" aria-hidden="true">→</span></a>
       </p>
     </div>
   </section>
 
-  <!-- ======================= Expertise ======================= -->
-  <section class="section section--soft" id="expertise">
+  <!-- ======================= Selected work ======================= -->
+  <section class="section" id="work">
     <div class="wrap">
-      <div class="section__head">
-        <p class="section__kicker">What I do</p>
-        <h2 class="section__title">Documentation skills across the full product cycle</h2>
-      </div>
-      <div class="card-grid">
-        <div class="card">
-          <div class="card__icon">📣</div>
-          <h3>Release notes</h3>
-          <p>Release notes for every product version, organized by reader impact — new features, improvements, bug fixes, and known issues — written in plain language with version numbers, dates, and scoped sections for easy scanning.</p>
+      <div class="section__head section__head--split" data-reveal>
+        <div>
+          <p class="mono-label">Selected work</p>
+          <h2 class="h-xl section__title" style="margin-top:22px">Four document types,<br>one standard: clarity.</h2>
         </div>
-        <div class="card">
-          <div class="card__icon">📘</div>
-          <h3>User manuals &amp; procedures</h3>
-          <p>Task-oriented instructions built around what the reader wants to do. Every step is written in the imperative, verified against the interface, and supported with annotated screenshots.</p>
-        </div>
-        <div class="card">
-          <div class="card__icon">🧩</div>
-          <h3>Structured authoring</h3>
-          <p>DITA and DocBook XML authoring for modular, reusable content — topic-based architecture, variable sets, and reusable sections that publish to PDF, HTML5, and online help from one source.</p>
-        </div>
-        <div class="card">
-          <div class="card__icon">✅</div>
-          <h3>Standards compliance</h3>
-          <p>Documentation written to specification: Simplified Technical English (ASD-STE100), ATA 100, iSpec 2200, and S1000D — plus the discipline of working from BOMs, engineering drawings, and test procedures.</p>
-        </div>
-        <div class="card">
-          <div class="card__icon">🛟</div>
-          <h3>Troubleshooting &amp; FAQs</h3>
-          <p>Support content organized by symptom: likely causes, tested fixes, and the exact error messages and states a reader will see — so help arrives before the support ticket does.</p>
-        </div>
-        <div class="card">
-          <div class="card__icon">🖼️</div>
-          <h3>Visuals, editing &amp; IA</h3>
-          <p>Flowcharts and annotated screenshots in Visio, Snagit, and Photoshop; peer review for accuracy and consistency; and the heading structures and cross-links that make a documentation set findable.</p>
-        </div>
-      </div>
-
-      <div class="section__head" style="margin-top:56px;margin-bottom:20px">
-        <h2 class="section__title" style="font-size:22px">Toolbox</h2>
-      </div>
-      <div class="chip-row">
-        <span class="tool-chip"><b>Paligo CMS</b> — primary authoring environment</span>
-        <span class="tool-chip"><b>Adobe FrameMaker</b> — structured &amp; unstructured</span>
-        <span class="tool-chip"><b>Oxygen XML Editor</b></span>
-        <span class="tool-chip"><b>Arbortext Editor</b></span>
-        <span class="tool-chip"><b>XML</b> — DITA &amp; DocBook</span>
-        <span class="tool-chip"><b>Markdown</b></span>
-        <span class="tool-chip"><b>Git &amp; GitHub</b> — Docs as Code</span>
-        <span class="tool-chip"><b>SharePoint</b></span>
-        <span class="tool-chip"><b>Jira</b></span>
-        <span class="tool-chip"><b>Wrike</b></span>
-        <span class="tool-chip"><b>Microsoft Visio</b> — flowcharts</span>
-        <span class="tool-chip"><b>Snagit</b> — captures</span>
-        <span class="tool-chip"><b>Adobe Photoshop</b></span>
-        <span class="tool-chip"><b>Visual Studio Code</b></span>
-        <span class="tool-chip"><b>Notepad++</b></span>
-        <span class="tool-chip"><b>Microsoft Word / Google Docs</b></span>
-        <span class="tool-chip"><b>HTML &amp; CSS</b></span>
-        <span class="tool-chip"><b>JavaScript</b></span>
-        <span class="tool-chip"><b>Python</b> — intermediate</span>
-      </div>
-    </div>
-  </section>
-
-  <!-- ======================= Samples ======================= -->
-  <section class="section" id="samples">
-    <div class="wrap">
-      <div class="section__head">
-        <p class="section__kicker">Writing samples</p>
-        <h2 class="section__title">Four document types, one standard: clarity</h2>
-        <p class="section__lede">
-          Each sample below is a complete, self-contained document — formatted the way it would ship,
-          not a fragment. Follow the <em>Open sample</em> link to read it in full.
+        <p class="lede section__lede">
+          Each sample is a complete, self-contained document — formatted the way it would ship,
+          not a fragment. Client work is under NDA, so these are written for a product everyone
+          knows.
         </p>
       </div>
 
-      <div class="sample-list">
+      <div class="work-list">
 
-        <article class="sample-card">
-          <div class="sample-card__meta">
-            <span class="chip">User guide</span>
-            <span class="chip chip--amber">With screenshots</span>
+        <a class="work-card" href="samples/user-guide.html" data-reveal data-cursor>
+          <div class="work-card__media">
+            <span class="work-card__index">01</span>
+            <img src="images/work/user-guide.jpg" alt="" loading="lazy" decoding="async" width="1280" height="853">
           </div>
-          <h3>Adding personal information to your Microsoft Edge profile</h3>
-          <p class="sample-card__desc">A task-based, step-by-step guide for end users of a real desktop application workflow.</p>
-          <div class="sample-card__excerpt">
-            <span class="docs">From the sample —</span>
-            “From the <em>Passwords and autofill</em> window, in the <em>Personal Info</em> section, click the
-            <em>Add Personal Info</em> button. The <em>Add Personal Info</em> pop-up window opens.”
+          <div class="work-card__body">
+            <div class="work-card__tags">
+              <span class="chip chip--accent">User guide</span>
+              <span class="chip chip--amber">With screenshots</span>
+            </div>
+            <h3>Adding personal information to your Microsoft Edge profile</h3>
+            <p class="work-card__desc">
+              A task-based, step-by-step guide for end users of a real desktop application workflow.
+            </p>
+            <div class="pull-quote">
+              <span class="docs">From the sample</span>
+              “From the <em>Passwords and autofill</em> window, in the <em>Personal Info</em> section, click the
+              <em>Add Personal Info</em> button. The <em>Add Personal Info</em> pop-up window opens.”
+            </div>
+            <div class="work-card__foot">
+              <span class="note">Procedure · field reference · related tasks</span>
+              <span class="text-link">Open sample <span class="arrow" aria-hidden="true">→</span></span>
+            </div>
           </div>
-          <div class="sample-card__foot">
-            <span class="note">Procedure · field reference · related tasks</span>
-            <a class="text-link" href="samples/user-guide.html">Open sample <span class="arrow">→</span></a>
-          </div>
-        </article>
+        </a>
 
-        <article class="sample-card">
-          <div class="sample-card__meta">
-            <span class="chip">Release notes</span>
-            <span class="chip chip--ok">Versioned</span>
+        <a class="work-card" href="samples/release-notes.html" data-reveal data-cursor>
+          <div class="work-card__media">
+            <span class="work-card__index">02</span>
+            <img src="images/work/release-notes.jpg" alt="" loading="lazy" decoding="async" width="1280" height="853">
           </div>
-          <h3>Release notes — v2.2.0, v2.1.0, v2.0.0</h3>
-          <p class="sample-card__desc">A versioned release-notes page that groups changes by reader impact and explains the benefit behind each update.</p>
-          <div class="sample-card__excerpt">
-            <span class="docs">From the sample —</span>
-            “<strong>New feature:</strong> Real-time collaboration for shared tasks. Multiple users can now
-            simultaneously view, edit, and comment on tasks within a shared workspace.”
+          <div class="work-card__body">
+            <div class="work-card__tags">
+              <span class="chip chip--accent">Release notes</span>
+              <span class="chip chip--ok">Versioned</span>
+            </div>
+            <h3>Release notes — v2.2.0, v2.1.0, v2.0.0</h3>
+            <p class="work-card__desc">
+              A versioned release-notes page that groups changes by reader impact and explains the
+              benefit behind each update.
+            </p>
+            <div class="pull-quote">
+              <span class="docs">From the sample</span>
+              “<strong>New feature:</strong> Real-time collaboration for shared tasks. Multiple users can now
+              simultaneously view, edit, and comment on tasks within a shared workspace.”
+            </div>
+            <div class="work-card__foot">
+              <span class="note">What's new · improvements · bug fixes</span>
+              <span class="text-link">Open sample <span class="arrow" aria-hidden="true">→</span></span>
+            </div>
           </div>
-          <div class="sample-card__foot">
-            <span class="note">What's new · improvements · bug fixes · previous releases</span>
-            <a class="text-link" href="samples/release-notes.html">Open sample <span class="arrow">→</span></a>
-          </div>
-        </article>
+        </a>
 
-        <article class="sample-card">
-          <div class="sample-card__meta">
-            <span class="chip">Style guide</span>
-            <span class="chip chip--amber">Editorial standard</span>
+        <a class="work-card" href="samples/style-guide.html" data-reveal data-cursor>
+          <div class="work-card__media">
+            <span class="work-card__index">03</span>
+            <img src="images/work/style-guide.jpg" alt="" loading="lazy" decoding="async" width="1280" height="853">
           </div>
-          <h3>Technical writing style guide — quick reference</h3>
-          <p class="sample-card__desc">A personal style reference with concrete before/after examples — the principles I apply to every document I write.</p>
-          <div class="sample-card__excerpt">
-            <span class="docs">From the sample —</span>
-            “<strong>Correct:</strong> To postpone a delivery, call 1-800-123-4567.<br>
-            <strong>Incorrect:</strong> In order to postpone a delivery, you can call us at 1-800-123-4567.”
+          <div class="work-card__body">
+            <div class="work-card__tags">
+              <span class="chip chip--accent">Style guide</span>
+              <span class="chip chip--amber">Editorial standard</span>
+            </div>
+            <h3>Technical writing style guide — quick reference</h3>
+            <p class="work-card__desc">
+              A personal style reference with concrete before/after examples — the principles I
+              apply to every document I write.
+            </p>
+            <div class="pull-quote">
+              <span class="docs">From the sample</span>
+              “<strong>Correct:</strong> To postpone a delivery, call 1-800-123-4567.<br>
+              <strong>Incorrect:</strong> In order to postpone a delivery, you can call us at 1-800-123-4567.”
+            </div>
+            <div class="work-card__foot">
+              <span class="note">Concise · clear · consistent · empathetic</span>
+              <span class="text-link">Open sample <span class="arrow" aria-hidden="true">→</span></span>
+            </div>
           </div>
-          <div class="sample-card__foot">
-            <span class="note">Concise · clear · consistent · empathetic · complete</span>
-            <a class="text-link" href="samples/style-guide.html">Open sample <span class="arrow">→</span></a>
-          </div>
-        </article>
+        </a>
 
-        <article class="sample-card">
-          <div class="sample-card__meta">
-            <span class="chip">Support article</span>
-            <span class="chip chip--neutral">Symptom-based</span>
+        <a class="work-card" href="samples/troubleshooting.html" data-reveal data-cursor>
+          <div class="work-card__media">
+            <span class="work-card__index">04</span>
+            <img src="images/work/troubleshooting.jpg" alt="" loading="lazy" decoding="async" width="1280" height="853">
           </div>
-          <h3>Troubleshooting autofill issues in Microsoft Edge</h3>
-          <p class="sample-card__desc">A symptom-driven support article: readers find their situation and follow tested fixes, one at a time.</p>
-          <div class="sample-card__excerpt">
-            <span class="docs">From the sample —</span>
-            “Edge does not offer to save the personal information you entered. <em>Possible cause:</em> the
-            'Save and fill personal info' setting is turned off.”
+          <div class="work-card__body">
+            <div class="work-card__tags">
+              <span class="chip chip--accent">Support article</span>
+              <span class="chip chip--neutral">Symptom-based</span>
+            </div>
+            <h3>Troubleshooting autofill issues in Microsoft Edge</h3>
+            <p class="work-card__desc">
+              A symptom-driven support article: readers find their situation and follow tested
+              fixes, one at a time.
+            </p>
+            <div class="pull-quote">
+              <span class="docs">From the sample</span>
+              “Edge does not offer to save the personal information you entered. <em>Possible cause:</em> the
+              ‘Save and fill personal info’ setting is turned off.”
+            </div>
+            <div class="work-card__foot">
+              <span class="note">5 scenarios · cause &amp; fix · escalation path</span>
+              <span class="text-link">Open sample <span class="arrow" aria-hidden="true">→</span></span>
+            </div>
           </div>
-          <div class="sample-card__foot">
-            <span class="note">5 scenarios · cause &amp; fix per scenario · escalation path</span>
-            <a class="text-link" href="samples/troubleshooting.html">Open sample <span class="arrow">→</span></a>
-          </div>
-        </article>
+        </a>
 
       </div>
 
-      <p style="text-align:center;color:var(--muted);font-size:14.5px;margin:34px 0 0">
+      <p class="note" style="text-align:center;margin:38px auto 0;max-width:60ch" data-reveal>
         The source files for every sample live in the public repository —
-        <a href="https://github.com/balathetechwriter/balathetechwriter.github.io" target="_blank" rel="noopener">github.com/balathetechwriter/balathetechwriter.github.io</a>.
-        For my full work history, see the <a href="resume.html">résumé</a>.
+        <a class="text-link" href="https://github.com/balathetechwriter/balathetechwriter.github.io" target="_blank" rel="noopener">github.com/balathetechwriter</a>.
       </p>
     </div>
   </section>
 
-  <!-- ======================= Approach ======================= -->
-  <section class="section section--soft" id="approach">
+  <!-- ======================= Capabilities ======================= -->
+  <section class="section section--soft section--line" id="capabilities">
     <div class="wrap">
-      <div class="section__head">
-        <p class="section__kicker">How I work</p>
-        <h2 class="section__title">From “what does this button do?” to shipped docs</h2>
+      <div class="section__head section__head--split" data-reveal>
+        <div>
+          <p class="mono-label">What you get</p>
+          <h2 class="h-xl section__title" style="margin-top:22px">Documentation skills across the full product cycle.</h2>
+        </div>
+        <p class="lede section__lede">
+          Research, structure, and editorial care — combined into content that reduces support
+          tickets instead of generating them.
+        </p>
       </div>
+
+      <div class="cap-list" data-reveal>
+
+        <details class="cap" open>
+          <summary>
+            <span class="cap__num">01</span>
+            <span class="cap__title">Release notes</span>
+            <span class="cap__sign" aria-hidden="true"></span>
+          </summary>
+          <div class="cap__body">
+            <div></div>
+            <div>
+              <p>
+                Release notes for every product version, organised by reader impact — new features,
+                improvements, bug fixes, and known issues — written in plain language with version
+                numbers, dates, and scoped sections for easy scanning.
+              </p>
+              <div class="cap__meta">
+                <span class="chip">Versioned</span>
+                <span class="chip">Impact-grouped</span>
+                <span class="chip">Benefit-led</span>
+              </div>
+            </div>
+          </div>
+        </details>
+
+        <details class="cap">
+          <summary>
+            <span class="cap__num">02</span>
+            <span class="cap__title">User manuals &amp; procedures</span>
+            <span class="cap__sign" aria-hidden="true"></span>
+          </summary>
+          <div class="cap__body">
+            <div></div>
+            <div>
+              <p>
+                Task-oriented instructions built around what the reader wants to do. Every step is
+                written in the imperative, verified against the interface, and supported with
+                annotated screenshots placed beside the step they belong to.
+              </p>
+              <div class="cap__meta">
+                <span class="chip">Task-based</span>
+                <span class="chip">Verified steps</span>
+                <span class="chip">Annotated visuals</span>
+              </div>
+            </div>
+          </div>
+        </details>
+
+        <details class="cap">
+          <summary>
+            <span class="cap__num">03</span>
+            <span class="cap__title">Structured authoring</span>
+            <span class="cap__sign" aria-hidden="true"></span>
+          </summary>
+          <div class="cap__body">
+            <div></div>
+            <div>
+              <p>
+                DITA and DocBook XML authoring for modular, reusable content — topic-based
+                architecture, variable sets, and reusable sections that publish to PDF, HTML5, and
+                online help from a single source.
+              </p>
+              <div class="cap__meta">
+                <span class="chip chip--accent">DITA</span>
+                <span class="chip chip--accent">DocBook</span>
+                <span class="chip">Paligo</span>
+                <span class="chip">Single-sourcing</span>
+              </div>
+            </div>
+          </div>
+        </details>
+
+        <details class="cap">
+          <summary>
+            <span class="cap__num">04</span>
+            <span class="cap__title">Standards compliance</span>
+            <span class="cap__sign" aria-hidden="true"></span>
+          </summary>
+          <div class="cap__body">
+            <div></div>
+            <div>
+              <p>
+                Documentation written to specification: Simplified Technical English (ASD-STE100),
+                ATA 100, iSpec 2200, and S1000D — plus the discipline of working from BOMs,
+                engineering drawings, and test procedures.
+              </p>
+              <div class="cap__meta">
+                <span class="chip">ASD-STE100</span>
+                <span class="chip">ATA 100</span>
+                <span class="chip">iSpec 2200</span>
+                <span class="chip">S1000D</span>
+              </div>
+            </div>
+          </div>
+        </details>
+
+        <details class="cap">
+          <summary>
+            <span class="cap__num">05</span>
+            <span class="cap__title">Troubleshooting &amp; FAQs</span>
+            <span class="cap__sign" aria-hidden="true"></span>
+          </summary>
+          <div class="cap__body">
+            <div></div>
+            <div>
+              <p>
+                Support content organised by symptom: likely causes, tested fixes, and the exact
+                error messages and states a reader will see — so help arrives before the support
+                ticket does.
+              </p>
+              <div class="cap__meta">
+                <span class="chip">Symptom-first</span>
+                <span class="chip">Tested fixes</span>
+                <span class="chip">Escalation paths</span>
+              </div>
+            </div>
+          </div>
+        </details>
+
+        <details class="cap">
+          <summary>
+            <span class="cap__num">06</span>
+            <span class="cap__title">Visuals, editing &amp; information architecture</span>
+            <span class="cap__sign" aria-hidden="true"></span>
+          </summary>
+          <div class="cap__body">
+            <div></div>
+            <div>
+              <p>
+                Flowcharts and annotated screenshots in Visio, Snagit, and Photoshop; peer review
+                for accuracy and consistency; and the heading structures and cross-links that make
+                a documentation set findable.
+              </p>
+              <div class="cap__meta">
+                <span class="chip">Visio</span>
+                <span class="chip">Snagit</span>
+                <span class="chip">Peer review</span>
+                <span class="chip">Findability</span>
+              </div>
+            </div>
+          </div>
+        </details>
+
+      </div>
+
+      <div style="margin-top:clamp(48px,6vw,78px)" data-reveal>
+        <p class="mono-label" style="margin-bottom:24px">Toolbox</p>
+        <div class="chip-row">
+          <span class="tool-chip"><b>Paligo CMS</b> primary authoring</span>
+          <span class="tool-chip"><b>Adobe FrameMaker</b> structured &amp; unstructured</span>
+          <span class="tool-chip"><b>Oxygen XML Editor</b></span>
+          <span class="tool-chip"><b>Arbortext Editor</b></span>
+          <span class="tool-chip"><b>XML</b> DITA &amp; DocBook</span>
+          <span class="tool-chip"><b>Markdown</b></span>
+          <span class="tool-chip"><b>Git &amp; GitHub</b> Docs as Code</span>
+          <span class="tool-chip"><b>SharePoint</b></span>
+          <span class="tool-chip"><b>Jira</b></span>
+          <span class="tool-chip"><b>Wrike</b></span>
+          <span class="tool-chip"><b>Microsoft Visio</b> flowcharts</span>
+          <span class="tool-chip"><b>Snagit</b> captures</span>
+          <span class="tool-chip"><b>Adobe Photoshop</b></span>
+          <span class="tool-chip"><b>Visual Studio Code</b></span>
+          <span class="tool-chip"><b>Notepad++</b></span>
+          <span class="tool-chip"><b>Word / Google Docs</b></span>
+          <span class="tool-chip"><b>HTML &amp; CSS</b></span>
+          <span class="tool-chip"><b>JavaScript</b></span>
+          <span class="tool-chip"><b>Python</b> intermediate</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ======================= Process ======================= -->
+  <section class="section" id="process">
+    <div class="wrap">
+      <div class="section__head" data-reveal>
+        <p class="mono-label">How I work</p>
+        <h2 class="h-xl section__title" style="margin-top:22px">From “what does this button do?” to shipped docs.</h2>
+      </div>
+
       <div class="steps">
-        <div class="step">
-          <div class="step__num">1</div>
+        <div class="step" data-reveal>
+          <div class="step__num">01</div>
           <h3>Clarify the task</h3>
           <p>I start from the user's goal and work backwards — interviewing subject-matter experts and trying the product myself before writing a word.</p>
         </div>
-        <div class="step">
-          <div class="step__num">2</div>
+        <div class="step" data-reveal style="--d:90ms">
+          <div class="step__num">02</div>
           <h3>Write to a standard</h3>
           <p>Imperative mood, active voice, consistent terminology, UI names formatted precisely. Every sentence earns its place.</p>
         </div>
-        <div class="step">
-          <div class="step__num">3</div>
+        <div class="step" data-reveal style="--d:180ms">
+          <div class="step__num">03</div>
           <h3>Show, don't just tell</h3>
           <p>Screenshots are captured, cropped, and annotated to sit beside the step they support — never as decoration.</p>
         </div>
-        <div class="step">
-          <div class="step__num">4</div>
+        <div class="step" data-reveal style="--d:270ms">
+          <div class="step__num">04</div>
           <h3>Verify &amp; iterate</h3>
           <p>Instructions are walked through on the real product, reviewed for accuracy, and revised when a reviewer or reader gets stuck.</p>
         </div>
@@ -487,59 +761,74 @@
     </div>
   </section>
 
-  <!-- ======================= Contact ======================= -->
-  <section class="section" id="contact">
-    <div class="wrap contact-grid">
-      <div>
-        <div class="section__head" style="margin-bottom:18px">
-          <p class="section__kicker">Contact</p>
-          <h2 class="section__title">Have a documentation project in mind?</h2>
-        </div>
-        <p class="lede">
-          I'm always happy to talk about writing documentation — whether it's a full help center,
-          a single user guide, or bringing a messy release-notes process under control.
-        </p>
-        <div class="contact-actions">
-          <a class="btn btn--primary" href="mailto:balachandarsaravanan32@gmail.com">Email me ✉</a>
-          <a class="btn btn--ghost" href="tel:+919751194576">+91 97511 94576</a>
-          <a class="btn btn--ghost" href="resume/Balachandar-Saravanan-Resume.pdf" download>Download résumé ↓</a>
-          <a class="btn btn--ghost" href="https://github.com/balathetechwriter" target="_blank" rel="noopener">GitHub ↗</a>
-        </div>
+  <!-- ======================= CTA / contact ======================= -->
+  <section class="section cta section--soft section--line" id="contact">
+    <div class="badge-spin" aria-hidden="true">
+      <svg viewBox="0 0 200 200">
+        <defs><path id="circlePath" d="M100,100 m-74,0 a74,74 0 1,1 148,0 a74,74 0 1,1 -148,0"></path></defs>
+        <text><textPath href="#circlePath" startOffset="0%">Available for work · Available for work · </textPath></text>
+      </svg>
+    </div>
+    <div class="wrap cta__inner">
+      <p class="mono-label mono-label--plain" data-reveal><span class="dot"></span>&nbsp; Have a documentation project in mind?</p>
+      <h2 class="cta__title" data-reveal style="--d:80ms">Let's <em>talk</em>.</h2>
+      <p class="lede" style="margin-inline:auto;text-align:center" data-reveal>
+        Whether it's a full help centre, a single user guide, or bringing a messy release-notes
+        process under control — I'm happy to talk it through.
+      </p>
+      <div class="cta__actions" style="margin-top:34px" data-reveal>
+        <a class="btn btn--primary" href="mailto:balachandarsaravanan32@gmail.com" data-cursor>Email me <span class="arrow" aria-hidden="true">↗</span></a>
+        <a class="btn" href="resume/Balachandar-Saravanan-Resume.pdf" download data-cursor>Download résumé <span class="arrow" aria-hidden="true">↓</span></a>
       </div>
-      <aside class="contact-side">
-        <h4>Find me online</h4>
+      <div class="cta__meta" data-reveal>
         <a href="mailto:balachandarsaravanan32@gmail.com">balachandarsaravanan32@gmail.com</a>
         <a href="tel:+919751194576">+91 97511 94576</a>
-        <a href="https://github.com/balathetechwriter" target="_blank" rel="noopener">github.com/balathetechwriter</a>
-        <a href="https://balathetechwriter.github.io">balathetechwriter.github.io</a>
-        <a href="resume.html">Full résumé</a>
-        <span class="repo-chip">● Bengaluru, India · open to opportunities</span>
-      </aside>
+        <a href="https://github.com/balathetechwriter" target="_blank" rel="noopener">GitHub ↗</a>
+        <span>Bengaluru, India</span>
+      </div>
     </div>
   </section>
 
+  </main>
+
   <!-- ======================= Footer ======================= -->
   <footer class="site-footer">
-    <div class="wrap site-footer__inner">
-      <span><span class="monogram-foot">Balachandar Saravanan</span> · Technical Writer · Bengaluru</span>
-      <span>© <span id="year">2026</span> · <a href="resume.html">Résumé</a> · Portfolio hand-coded with HTML &amp; CSS</span>
+    <div class="wrap">
+      <div class="footer-grid">
+        <div class="footer-col">
+          <h3>Balachandar Saravanan</h3>
+          <p style="max-width:38ch">
+            Technical writer in Bengaluru. Release notes, user manuals, and structured DITA /
+            DocBook documentation for healthcare software and aviation.
+          </p>
+          <span class="chip chip--accent" style="margin-top:6px">● Open to opportunities</span>
+        </div>
+        <div class="footer-col">
+          <h3>Navigate</h3>
+          <a href="#about">About</a>
+          <a href="#journey">Journey</a>
+          <a href="#work">Selected work</a>
+          <a href="resume.html">Résumé</a>
+        </div>
+        <div class="footer-col">
+          <h3>Elsewhere</h3>
+          <a href="mailto:balachandarsaravanan32@gmail.com">Email</a>
+          <a href="tel:+919751194576">+91 97511 94576</a>
+          <a href="https://github.com/balathetechwriter" target="_blank" rel="noopener">GitHub</a>
+          <a href="resume/Balachandar-Saravanan-Resume.pdf" download>Résumé (PDF)</a>
+        </div>
+      </div>
+
+      <div class="footer-word" aria-hidden="true">BALACHANDAR SARAVANAN</div>
+
+      <div class="site-footer__inner">
+        <span><span class="monogram-foot">Technical Writer</span> · Bengaluru, India</span>
+        <span>© <span id="year">2026</span> · Hand-coded HTML &amp; CSS · Docs as Code</span>
+        <a class="to-top" href="#main" data-cursor>Back to top <span aria-hidden="true">↑</span></a>
+      </div>
     </div>
   </footer>
 
-  <script>
-    // Mobile nav toggle
-    var toggle = document.querySelector('.nav__toggle');
-    var nav = document.getElementById('site-nav');
-    if (toggle) {
-      toggle.addEventListener('click', function () {
-        var open = nav.classList.toggle('open');
-        toggle.setAttribute('aria-expanded', open ? 'true' : 'false');
-      });
-      nav.addEventListener('click', function (e) {
-        if (e.target.tagName === 'A') { nav.classList.remove('open'); }
-      });
-    }
-    document.getElementById('year').textContent = new Date().getFullYear();
-  </script>
+  <script src="js/site.js" defer></script>
 </body>
 </html>
