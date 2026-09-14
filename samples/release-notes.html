@@ -13,28 +13,47 @@
   <meta property="og:url" content="https://balathetechwriter.github.io/samples/release-notes.html">
   <link rel="icon" type="image/png" sizes="32x32" href="../favicon-32x32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="../favicon-16x16.png">
+  <meta name="theme-color" content="#0a0a0b">
+  <meta name="color-scheme" content="dark">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter+Tight:ital,wght@0,200..700;1,200..700&family=Inter:wght@300..600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="../css/site.css">
 </head>
 <body>
 
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <div class="aurora" aria-hidden="true"><span></span><span></span><span></span></div>
+  <div class="grain" aria-hidden="true"></div>
+  <div class="scroll-progress" aria-hidden="true"></div>
+  <div class="cursor-ring" aria-hidden="true"></div>
+  <div class="cursor" aria-hidden="true"></div>
   <header class="site-header">
     <div class="wrap site-header__inner">
-      <a class="brand" href="../index.html">
+      <a class="brand" href="../index.html" data-cursor>
         <span class="brand__mark">BS</span>
         <span><span class="brand__name">Balachandar S.</span><span class="brand__role">Technical Writer</span></span>
       </a>
-      <nav class="nav">
-        <a href="../index.html">Portfolio</a>
-        <a href="../index.html#samples">Samples</a>
-        <a href="../index.html#contact">Contact</a>
-        <a class="nav__cta" href="../index.html#samples">All samples</a>
+      <nav class="nav" id="site-nav" aria-label="Primary">
+        <div class="nav__links">
+          <a href="../index.html">Portfolio</a>
+          <a href="../index.html#work">Work</a>
+          <a href="../index.html#contact">Contact</a>
+        </div>
+        <a class="btn btn--primary btn--sm nav__cta" data-cursor href="../index.html#work">All samples</a>
       </nav>
+      <button class="nav__toggle" aria-label="Toggle menu" aria-expanded="false" aria-controls="site-nav">
+        <span></span><span></span><span></span>
+      </button>
     </div>
   </header>
 
+  <main id="main">
+
   <div class="doc-header">
     <div class="doc-header__inner">
-      <p class="breadcrumb"><a href="../index.html">Portfolio</a> / <a href="../index.html#samples">Writing samples</a> / Release notes</p>
+      <p class="breadcrumb"><a href="../index.html">Portfolio</a> / <a href="../index.html#work">Writing samples</a> / Release notes</p>
       <div class="doc-meta">
         <span class="chip">Release notes</span>
         <span class="chip chip--ok">Versioned</span>
@@ -174,12 +193,45 @@
 
   </div>
 
+  </main>
+
   <footer class="site-footer">
-    <div class="wrap site-footer__inner">
-      <span><span class="monogram-foot">Balachandar S.</span> · Technical Writer</span>
-      <span><a href="../index.html">Portfolio</a> · <a href="../index.html#samples">Samples</a> · Sample document — for portfolio demonstration</span>
+    <div class="wrap">
+      <div class="footer-grid">
+        <div class="footer-col">
+          <h3>Balachandar Saravanan</h3>
+          <p style="max-width:38ch">
+            Technical writer in Bengaluru. Release notes, user manuals, and structured DITA /
+            DocBook documentation for healthcare software and aviation.
+          </p>
+          <span class="chip chip--accent" style="margin-top:6px">● Open to opportunities</span>
+        </div>
+        <div class="footer-col">
+          <h3>Navigate</h3>
+          <a href="../index.html">Portfolio</a>
+          <a href="../index.html#work">Selected work</a>
+          <a href="../index.html#journey">Journey</a>
+          <a href="../resume.html">Résumé</a>
+        </div>
+        <div class="footer-col">
+          <h3>Elsewhere</h3>
+          <a href="mailto:balachandarsaravanan32@gmail.com">Email</a>
+          <a href="tel:+919751194576">+91 97511 94576</a>
+          <a href="https://github.com/balathetechwriter" target="_blank" rel="noopener">GitHub</a>
+          <a href="../resume/Balachandar-Saravanan-Resume.pdf" download>Résumé (PDF)</a>
+        </div>
+      </div>
+
+      <div class="footer-word" aria-hidden="true">BALACHANDAR SARAVANAN</div>
+
+      <div class="site-footer__inner">
+        <span><span class="monogram-foot">Technical Writer</span> · Bengaluru, India</span>
+        <span>© <span id="year">2026</span> · Hand-coded HTML &amp; CSS · Docs as Code</span>
+        <a class="to-top" href="#main" data-cursor>Back to top <span aria-hidden="true">↑</span></a>
+      </div>
     </div>
   </footer>
 
+  <script src="../js/site.js" defer></script>
 </body>
 </html>
